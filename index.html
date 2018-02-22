@@ -8,19 +8,8 @@
 		<script src="ns.js"></script>
 	</head>
 	<body>
-		<!-- 
-<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  	if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12';
-			  fjs.parentNode.insertBefore(js, fjs);
-		  }(document, 'script', 'facebook-jssdk'));
-		</script>
- -->
-		<div class="grid content">
-		  <div id="navigation">
+		<div id="sidenav" class="sidenav">
+ 	 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		  	<a href="#about">About</a>
 		  	<a href="#news">News</a>
 		  	<a href="#staff">Staff</a>
@@ -28,6 +17,20 @@
 		  	<a href="#history">History</a>
 		  	<a href="#contact">Contact</a>
 		</div>
+		<div class="grid content">
+		<div id="navigation" onclick="openNav()">
+			<div id="sidenav-toggle">
+				<div id="bar1" class="bar"></div>
+				<div id="bar2" class="bar"></div>
+				<div id="bar3" class="bar"></div>
+			</div>
+			<div id="navigation-text">
+				National School, Location
+			</div>
+		  	<!-- <button onclick="openNav()">open</button> -->
+		</div>
+
+ 	 
 		<div id="banner" class="grid-item-padding">	
 			<h1>National School</h1>
 			<h2>Location<h2>
