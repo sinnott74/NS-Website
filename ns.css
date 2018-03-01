@@ -1,29 +1,33 @@
  
 #banner {
 	grid-area: banner;
-	margin-top: 30px; /* Add a top margin to avoid content overlay */
 }
 
 #banner-vid-text-overlay {
-    grid-column-start: banner-start;
-    grid-column-end: banner-end;
-    grid-row: 2;
+	
 	position: absolute;
-	width: 100%;
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
-    padding: 20px;
+    padding-left: 20px;
+ 	width: -webkit-fill-available;
+}
+
+#parent-text-container {
+	position:relative;
+}
+
+#vid {
+	grid-area: banner;
+	width: 100%;
 }
 
 #navigation {
 	grid-area: navigation;
 	overflow: hidden;
     background-color: black;
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    left: 0; 
-    width:100%;
-    z-index: 1;
+    position: sticky; 
+    top: 0; 
+    z-index: 10;
 }
 
  
@@ -43,6 +47,7 @@
 
 #sidenav {
 	grid-area: sidenav;
+	z-index: 20;
 }
 
 #about {
@@ -75,11 +80,6 @@
 
 .grid {
 	display: grid;
-/* 
-	grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(8, 100px);
-    grid-auto-flow: dense;
- */
 	grid-template-areas: 	"navigation navigation"
 							"banner banner"
 							"about news"
@@ -88,8 +88,6 @@
 							"policies policies"
 							"history history"
 							"footer footer";
-	/* grid-gap: 10px 10px; */
-  		
 				
 }
 
