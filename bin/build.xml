@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="TranformXml" default="TransformFile">
+
+  <property
+    name="dir.home"
+    value="${basedir}"
+  />
+  <property
+    name="dir.web"
+    value="${dir.home}/web"
+  />
+  <property
+    name="dir.data"
+    value="${dir.home}/data"
+  />
+  <property
+    name="dir.styles"
+    value="${dir.home}/styles"
+  />
+  <property
+    name="file.xml.main"
+    value="${dir.data}/main.xml"
+  />
+  <property
+    name="file.html.index"
+    value="${dir.web}/index.html"
+  />
+  <property
+    name="file.xsl.main"
+    value="${dir.styles}/main.xsl"
+  />
+
+  <target name="TransformFile">
+    <!-- Transform one file into an HTML file -->
+    <xslt in="${file.xml.main}" out="${file.html.index}" style="${file.xsl.main}"/>
+  </target>
+  
+  <target name="TransformAll">
+    <!-- Transform all the files in the current directory -->
+    <xslt basedir="." destdir="."
+      includes="data/**/*.site.xml"
+      style="site.xsl"
+    />
+    </target>
+  </project>

@@ -80,14 +80,14 @@
 
 .grid {
 	display: grid;
-	grid-template-areas: 	"navigation navigation"
-							"banner banner"
-							"about news"
-							"contact news"
-							"staff news"
-							"policies policies"
-							"history history"
-							"footer footer";
+	grid-template-areas: 	"navigation navigation navigation navigation"
+							"banner banner banner banner"
+							"about about about news"
+							"contact contact contact news"
+							"staff staff staff news"
+							"policies policies policies news"
+							"history history history news"
+							"footer footer footer footer";
 				
 }
 
