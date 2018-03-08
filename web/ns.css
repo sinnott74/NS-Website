@@ -1,29 +1,29 @@
  
 #banner {
-	grid-area: banner;
+    grid-area: banner;
 }
 
 #banner-vid-text-overlay {
-	
-	position: absolute;
+    
+    position: absolute;
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
     padding-left: 20px;
- 	width: -webkit-fill-available;
+    width: -webkit-fill-available;
 }
 
 #parent-text-container {
-	position:relative;
+    position:relative;
 }
 
 #vid {
-	grid-area: banner;
-	width: 100%;
+    grid-area: banner;
+    width: 100%;
 }
 
 #navigation {
-	grid-area: navigation;
-	overflow: hidden;
+    grid-area: navigation;
+    overflow: hidden;
     background-color: black;
     position: sticky; 
     top: 0; 
@@ -46,49 +46,54 @@
   }
 
 #sidenav {
-	grid-area: sidenav;
-	z-index: 20;
+    grid-area: sidenav;
+    z-index: 20;
 }
 
-#about {
-	grid-area: about;
+#quick-about {
+    grid-area: quick-about;
 }
 
 #news {
-	grid-area: news;
+    grid-area: news;
+}
+
+#fb {
+    grid-area: fb;
 }
 
 #staff {
-	grid-area: staff;
+    grid-area: staff;
 }
 
 #policies {
-	grid-area: policies;
+    grid-area: policies;
 }
 
 #history {
-	grid-area: history;
+    grid-area: history;
 }
 
 #contact {
-	grid-area: contact;
+    grid-area: contact;
 }
 
 #footer {
-	grid-area: footer;
+    grid-area: footer;
 }
 
 .grid {
-	display: grid;
-	grid-template-areas: 	"navigation navigation navigation navigation"
-							"banner banner banner banner"
-							"about about about news"
-							"contact contact contact news"
-							"staff staff staff news"
-							"policies policies policies news"
-							"history history history news"
-							"footer footer footer footer";
-				
+    display: grid;
+    grid-template-areas:    "navigation navigation navigation navigation"
+                            "banner banner banner banner"
+                            "news news news fb"
+                            "quick-about quick-about quick-about fb"
+                            "contact contact contact fb"
+                            "staff staff staff fb"
+                            "policies policies policies fb"
+                            "history history history fb"
+                            "footer footer footer footer";
+                
 }
 
 /* remove when no longer required */
@@ -97,16 +102,24 @@
     background-color: rgba(233,171,88,.5); 
 }
 
-.black-bg {
-	background-color: black;
+.black-bg-color {
+    background-color: black;
+}
+
+.orange-bg {
+    background: orange;
+}
+
+.dark-green-bg {
+    background: darkgreen;
 }
 
 .fill-available-width {
-	width: -webkit-fill-available;
+    width: -webkit-fill-available;
 }
 
 .full-width {
-	width: 100%;
+    width: 100%;
 }
 
 .center-grid-item {
@@ -114,20 +127,21 @@
 }
 
 .center-text-content {
-	text-align: center;
-	vertical-align: middle;
+    text-align: center;
+    vertical-align: middle;
 }
 
 /******* menu icon ********/
 #navigation-text {
-	color: white;
-	float: right;
-	margin-right: 30px;
+    color: white;
+    float: right;
+    margin-right: 30px;
+    padding-top: 10px;
 }
 
 #sidenav-toggle {
-	margin-left: 10px;
-	float: left;
+    margin-left: 10px;
+    float: left;
 }
 
 .bar {
@@ -189,5 +203,26 @@
     .sidenav a {font-size: 18px;}
 }
 /******* The side navigation menu *******/
+
+
+/**** Counter ****/
+#bubble
+{
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  float:left;
+  margin:5px;
+}
+.count
+{
+  line-height: 100px;
+  color:white;
+  margin-left:37px;
+  font-size:25px;
+}
+
 
 

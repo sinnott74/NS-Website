@@ -24,6 +24,7 @@
 	    <title>National School - Location</title>
 		<link type="text/css" rel="stylesheet" href="ns.css"/>
 		<script src="ns.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<!-- 
@@ -38,7 +39,7 @@
  -->
 		<div id="sidenav" class="sidenav">
  	 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"/>
-		  	<a href="#about">About</a>
+		  	<a href="#quick-about">About</a>
 		  	<a href="#news">News</a>
 		  	<a href="#staff">Staff</a>
 		  	<a href="#policies">Policies</a>
@@ -69,8 +70,29 @@
 			  Your browser does not support the video tag.
 			</video>
 		</div>
-		<div id="about" class="grid-item-padding">About - Students Numbers/School Info</div>
-		<div id="news" class="grid-item-padding">
+		<div id="quick-about" class="grid-item-padding">
+			<div id="bubble" class="orange-bg">
+				<span class="count">90</span>
+			</div>
+			<div id="bubble" class="dark-green-bg">
+				<span class="count">6</span>
+			</div>
+			<script>
+	$('.count').each(function () {
+    	$(this).prop('Counter',0).animate({
+        	Counter: $(this).text()
+    	}, {
+        	duration: 6000,
+        	easing: 'swing',
+        	step: function (now) {
+            	$(this).text(Math.ceil(now));
+        	}
+    	});
+	});
+	</script>
+		</div>		
+		<div id="news" class="grid-item-padding">Latest News</div>
+		<div id="fb" class="grid-item-padding">
 <!-- 			<div class="fb-page" data-href="https://www.facebook.com/cortownns" data-tabs="timeline, events" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/cortownns" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/cortownns">St. Brigid&#039;s NS, Cortown</a></blockquote></div> -->
 			 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCortownNS&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"/>
 		</div>
