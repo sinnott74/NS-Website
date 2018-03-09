@@ -72,10 +72,13 @@
 		</div>
 		<div id="quick-about" class="grid-item-padding">
 			<div id="bubble" class="orange-bg">
-				<span class="count">90</span>
+				<span class="count" style="margin-left:30px;">120</span>
 			</div>
 			<div id="bubble" class="dark-green-bg">
-				<span class="count">6</span>
+				<span class="count" style="margin-left:40px;">6</span>
+			</div>
+			<div id="bubble" class="dark-green-bg">
+				<span class="count" style="margin-left:40px;">1</span>
 			</div>
 			<script>
 	$('.count').each(function () {
