@@ -207,8 +207,17 @@
 
 
 /**** Counter ****/
-#bubble
-{
+.bubble-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.bubble-staff-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.bubble {
   width: 100px;
   height: 100px;
   -moz-border-radius: 50px;
@@ -217,8 +226,24 @@
   float:left;
   margin:5px;
 }
-.count
-{
+
+#bubble-student {
+    background: orange;
+}
+
+#bubble-teacher {
+    background: darkgreen;
+}
+
+#bubble-sna {
+    background: darkgreen;
+}
+
+.bubble-title {
+    align-self: center;
+}
+
+.count {
   line-height: 100px;
   color:white;
   font-size:25px;
