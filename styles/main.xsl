@@ -37,8 +37,8 @@
  				 fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>
  -->
-		<div id="sidenav" class="sidenav">
- 	 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"/>
+		<div id="sidenav" class="sidenav" onclick="closeNav()">
+ 	 		<!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"/> -->
 		  	<a href="#quick-about">About</a>
 		  	<a href="#news">News</a>
 		  	<a href="#staff">Staff</a>
@@ -97,7 +97,8 @@
 		<div id="news" class="grid-item-padding">Latest News</div>
 		<div id="fb" class="grid-item-padding">
 <!-- 			<div class="fb-page" data-href="https://www.facebook.com/cortownns" data-tabs="timeline, events" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/cortownns" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/cortownns">St. Brigid&#039;s NS, Cortown</a></blockquote></div> -->
-			 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCortownNS&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"/>
+			<xsl:variable name="facebook-feed-link" select="PROPERTIES/FACEBOOK/@feedlink"/>
+			<iframe src="{$facebook-feed-link}" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"/>
 		</div>
 		<div id="staff" class="grid-item-padding">
 			<table>
@@ -192,7 +193,8 @@
       				</tr>
       			</tbody>
       		</table>
-      		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4234.119635159622!2d-6.858136961742479!3d53.684910828301035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4867584b938aadff%3A0x48ca87709ec4be3d!2sCortown+National+School!5e0!3m2!1sen!2sie!4v1505820442245" width="100%" height="375" frameborder="0" style="border:0" allowfullscreen=""/>
+      		<xsl:variable name="google-map-link" select="PROPERTIES/GOOGLE/@maplink"/>
+      		<iframe src="{$google-map-link}" width="100%" height="375" frameborder="0" style="border:0" allowfullscreen=""/>
       	</div>
 		<div id="footer" class="grid-item-padding">Copyright © 2018. National School, Location. All Rights Reversed.</div>
 	</div>

@@ -181,7 +181,7 @@
 .sidenav a:hover {
     color: #f1f1f1;
 }
-
+/* TODO do we even need a close button if the closeNav() is on the div itself? */
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
     position: absolute;
@@ -189,6 +189,7 @@
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    z-index: 1;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
