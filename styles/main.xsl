@@ -108,8 +108,10 @@
 		<div id="news" class="grid-item-padding">Latest News</div>
 		<div id="fb" class="grid-item-padding">
 <!-- 			<div class="fb-page" data-href="https://www.facebook.com/cortownns" data-tabs="timeline, events" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/cortownns" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/cortownns">St. Brigid&#039;s NS, Cortown</a></blockquote></div> -->
-			<xsl:variable name="facebook-feed-link" select="PROPERTIES/FACEBOOK/@feedlink"/>
-			<iframe src="{$facebook-feed-link}" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"/>
+			<div id="fb-container">
+				<xsl:variable name="facebook-feed-link" select="PROPERTIES/FACEBOOK/@feedlink"/>
+				<iframe src="{$facebook-feed-link}" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"/>
+			</div>
 		</div>
 		<div id="staff" class="grid-item-padding">
 			<table>

@@ -62,6 +62,11 @@
     grid-area: fb;
 }
 
+#fb-container {
+    display: flex;
+    justify-content: center;
+}
+
 #staff {
     grid-area: staff;
 }
@@ -84,15 +89,15 @@
 
 .grid {
     display: grid;
-    grid-template-areas:    "navigation navigation navigation navigation"
-                            "banner banner banner banner"
-                            "news news news fb"
-                            "quick-about quick-about quick-about fb"
-                            "contact contact contact fb"
-                            "staff staff staff fb"
-                            "policies policies policies fb"
-                            "history history history fb"
-                            "footer footer footer footer";
+    grid-template-areas:    "navigation navigation navigation"
+                            "banner banner banner"
+                            "news news fb"
+                            "quick-about quick-about fb"
+                            "contact contact fb"
+                            "staff staff staff"
+                            "policies policies policies"
+                            "history history history"
+                            "footer footer footer";
                 
 }
 
@@ -210,6 +215,7 @@
 .bubble-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .bubble-staff-container {
@@ -224,7 +230,8 @@
   -webkit-border-radius: 50px;
   border-radius: 50px;
   float:left;
-  margin:5px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #bubble-student {
