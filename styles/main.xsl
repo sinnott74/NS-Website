@@ -72,22 +72,22 @@
 		</div>
 		<div id="quick-about" class="grid-item-padding">
 			<div class="bubble-container">
-  				<div class="bubble-staff-container">
+  				<div class="single-bubble-container">
     				<div class="bubble-title">Students</div>
 					<div class="bubble" id="bubble-student">
-						<span class="count" style="margin-left:30px;">120</span>
+						<span class="count">120</span>
       				</div>
-      			</div>
-    			<div class="bubble-staff-container">
+        		</div>
+    			<div class="single-bubble-container">
     				<div class="bubble-title">Teachers</div>
 					<div class="bubble" id="bubble-teacher">
-						<span class="count" style="margin-left:40px;">6</span>
+						<span class="count">6</span>
         			</div>
         		</div>
-    			<div class="bubble-staff-container">
+        		<div class="single-bubble-container">
     				<div class="bubble-title">Special-Needs Assistants</div>
 					<div class="bubble" id="bubble-sna">
-						<span class="count" style="margin-left:40px;">1</span>
+						<span class="count">1</span>
         			</div>
         		</div>
         	</div>
