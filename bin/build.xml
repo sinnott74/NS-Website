@@ -32,14 +32,17 @@
 
   <target name="TransformFile">
     <!-- Transform one file into an HTML file -->
-    <xslt in="${file.xml.main}" out="${file.html.index}" style="${file.xsl.main}"/>
+    <xslt 
+      in="${file.xml.main}" 
+      out="${file.html.index}" 
+      style="${file.xsl.main}"
+      force="true"
+      >
+      <param
+        expression="${dir.data}" 
+        name="data-dir"
+      />
+    </xslt>
   </target>
   
-  <target name="TransformAll">
-    <!-- Transform all the files in the current directory -->
-    <xslt basedir="." destdir="."
-      includes="data/**/*.site.xml"
-      style="site.xsl"
-    />
-    </target>
-  </project>
+</project>

@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  
-  xmlns:xalan="http://xml.apache.org/xalan" xmlns:redirect="http://xml.apache.org/xalan/redirect"
+<xsl:stylesheet 
+  version="2.0" 
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:xalan="http://xml.apache.org/xalan" 
+  xmlns:redirect="http://xml.apache.org/xalan/redirect"
   extension-element-prefixes="redirect">
-
-  <xsl:param name="input-dir" select="''" />
-  <xsl:param name="output-dir-html" select="''" />
 
   <xsl:output method="html" indent="yes" omit-xml-declaration="yes"
     encoding="UTF-8" />
-
+  <xsl:param name="data-dir" select="''" />
+  
+  <xsl:variable name="news-file" select="concat($data-dir,'/news.xml')"/>  
+  <xsl:variable name="news-doc" select="document($news-file)"/>
+  <xsl:variable name="news-items" select="$news-doc/MAIN/NEWS/NEWS-ITEM"/>
   <xsl:variable name="school-name" select="MAIN/PROPERTIES/SCHOOL/@name"/>
   <xsl:variable name="school-add1" select="MAIN/PROPERTIES/SCHOOL/@address1"/>
+  <xsl:variable name="quick-news-items-allowed" select="5"/>
 
   <xsl:template match="MAIN">
   	<xsl:call-template name="create-index"/>
@@ -43,7 +47,7 @@
 		<div id="sidenav" class="sidenav" onclick="closeNav()">
  	 		<!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"/> -->
 		  	<a href="#quick-about">About</a>
-		  	<a href="#news">News</a>
+		  	<a href="#quick-news">News</a>
 		  	<a href="#staff">Staff</a>
 		  	<a href="#policies">Policies</a>
 		  	<a href="#history">History</a>
@@ -108,11 +112,28 @@
 	});
 	</script>
 		</div>		
-		<div id="news" class="grid-item-padding">Latest News</div>
+		<div id="quick-news" class="grid-item-padding">
+			<div id="quick-news-container">
+				<xsl:for-each select="$news-items">
+					<xsl:sort select="@year" order="descending"/>
+					<xsl:sort select="@month" order="descending"/>
+					<xsl:sort select="@day" order="descending"/>
+					<xsl:if test="position() &lt; ($quick-news-items-allowed+1)">
+					<div class="news-item">
+						<div class="news-item-date"><xsl:value-of select="concat(@day,'/',@month,'/',@year, ' ',@time)"/></div>
+						<div class="news-item-title"><xsl:value-of select="@title"/></div>
+						<div class="news-item-text-content"><xsl:value-of select="."/></div> 
+					</div>
+					<hr/>
+					</xsl:if>
+				</xsl:for-each>
+			</div>
+			<button id="more-news-redirect-button">More News</button>
+		</div>
 		<div id="fb" class="grid-item-padding">
 <!-- 			<div class="fb-page" data-href="https://www.facebook.com/cortownns" data-tabs="timeline, events" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/cortownns" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/cortownns">St. Brigid&#039;s NS, Cortown</a></blockquote></div> -->
 			<div id="fb-container">
-				<xsl:variable name="facebook-feed-link" select="PROPERTIES/FACEBOOK/@feedlink"/>
+				<xsl:variable name="facebook-feed-link" select="PROPERTIES/FACEBOOK/@feedLink"/>
 				<iframe id="fb-feed" src="{$facebook-feed-link}" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"/>
 			</div>
 		</div>
@@ -188,7 +209,8 @@
       					   Phone:
       					</td>
       					<td class="contact-value">
-							<a href="tel:555555555">087xxxxxxx></a>
+      						<xsl:variable name="school-contact-num" select="PROPERTIES/SCHOOL/@contactNumber"/>
+							<a href="tel:{$school-contact-num}"><xsl:value-of select="$school-contact-num"/></a>
       					</td>
       				</tr>
       				<tr>
@@ -196,7 +218,8 @@
       						 Email:
       					</td>
       					<td class="contact-value">
-							<a href="mailto:email@email.com">email@email.com</a>
+      						<xsl:variable name="school-contact-email" select="PROPERTIES/SCHOOL/@contactEmail"/>
+							<a href="mailto:{$school-contact-email}"><xsl:value-of select="$school-contact-email"/></a>
       					</td>
       				</tr>
       				<tr>
@@ -204,12 +227,13 @@
       						 Facebook:
       					</td>
       					<td class="fb-value">
-      						<a href="https://www.facebook.com">Link</a>
+      						<xsl:variable name="fb-link" select="PROPERTIES/FACEBOOK/@link"/>
+      						<a href="{$fb-link}"><xsl:value-of select="$school-name"/></a>
       					</td>
       				</tr>
       			</tbody>
       		</table>
-      		<xsl:variable name="google-map-link" select="PROPERTIES/GOOGLE/@maplink"/>
+      		<xsl:variable name="google-map-link" select="PROPERTIES/GOOGLE/@mapLink"/>
       		<iframe id="gmap" src="{$google-map-link}" frameborder="0" allowfullscreen=""/>
       	</div>
 		<div id="footer" class="grid-item-padding">

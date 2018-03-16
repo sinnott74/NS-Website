@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MAIN>
+	<NEWS>
+		<NEWS-ITEM
+			day="1"
+			month="04"
+			year="2018"
+			time="15:15"
+			title="This is the school news title"
+			>
+			This is the latest in school news. Isn't it amazing!
+		</NEWS-ITEM>
+		<NEWS-ITEM
+			day="4"
+			month="03"
+			year="2018"
+			time="15:15"
+			title="School reports a news item"
+			>
+			Can you believe it?
+		</NEWS-ITEM>
+		<NEWS-ITEM
+			day="2"
+			month="03"
+			year="2018"
+			time="15:15"
+			title="Breaking news, a school news item"
+			>
+			Aren't we doing great?
+		</NEWS-ITEM>
+		<NEWS-ITEM
+			day="2"
+			month="03"
+			year="2018"
+			time="15:15"
+			title="Breaking news, a school news item"
+			>
+			Aren't we doing great?
+		</NEWS-ITEM>
+		<NEWS-ITEM
+			day="2"
+			month="03"
+			year="2018"
+			time="15:15"
+			title="Breaking news, a school news item"
+			>
+			Aren't we doing great?
+		</NEWS-ITEM>
+		<NEWS-ITEM
+			day="2"
+			month="03"
+			year="2018"
+			time="15:15"
+			title="Breaking news, a school news item"
+			>
+			Aren't we doing great?
+		</NEWS-ITEM>
+		<NEWS-ITEM
+			day="2"
+			month="03"
+			year="2018"
+			time="15:15"
+			title="Breaking news, a school news item"
+			>
+			Aren't we doing great?
+		</NEWS-ITEM>
+		<NEWS-ITEM
+			day="2"
+			month="03"
+			year="2018"
+			time="15:15"
+			title="Breaking news, a school news item"
+			>
+			Aren't we doing great?
+		</NEWS-ITEM>
+		<NEWS-ITEM
+			day="2"
+			month="03"
+			year="2018"
+			time="15:15"
+			title="Breaking news, a school news item"
+			>
+			Aren't we doing great?
+		</NEWS-ITEM>
+		<NEWS-ITEM
+			day="2"
+			month="03"
+			year="2018"
+			time="15:15"
+			title="Breaking news, a school news item"
+			>
+			Aren't we doing great?
+		</NEWS-ITEM>
+		<NEWS-ITEM
+			day="2"
+			month="03"
+			year="2018"
+			time="15:15"
+			title="Breaking news, a school news item"
+			>
+			Aren't we doing great?
+		</NEWS-ITEM>
+	</NEWS>
+</MAIN>

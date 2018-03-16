@@ -3,6 +3,22 @@ body {
     background-color: darkgrey;
 }
 
+.grid {
+    display: grid;
+    grid-template-areas:    "navigation navigation navigation"
+                            "banner banner banner"
+                            "quick-about quick-about quick-about"
+                            "quick-news quick-news fb"
+                            "contact contact contact"
+                            "staff staff staff"
+                            "policies policies policies"
+                            "history history history"
+                            "footer footer footer";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+                
+}
+
 #banner {
     grid-area: banner;
 }
@@ -58,8 +74,37 @@ body {
     grid-area: quick-about;
 }
 
-#news {
-    grid-area: news;
+#quick-news {
+    grid-area: quick-news;
+    display: flex;
+    flex-direction: column;
+}
+
+#quick-news-container {
+    margin: 20px;
+}
+
+.news-item {
+    margin: 5px;
+}
+
+.news-item-title {
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+.news-item-date {
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 80%;
+}
+
+.news-item-text-content {
+    padding-top: 3px;
+}
+
+#more-news-redirect-button {
+    height: -webkit-fill-available;
 }
 
 #fb {
@@ -116,22 +161,6 @@ body {
     background-color: black;
     padding: 10px;
     margin-right: 5px;
-}
-
-.grid {
-    display: grid;
-    grid-template-areas:    "navigation navigation navigation"
-                            "banner banner banner"
-                            "quick-about quick-about quick-about"
-                            "news news fb"
-                            "contact contact fb"
-                            "staff staff staff"
-                            "policies policies policies"
-                            "history history history"
-                            "footer footer footer";
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
-                
 }
 
 /* remove when no longer required */
