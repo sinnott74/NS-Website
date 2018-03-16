@@ -87,6 +87,17 @@ body {
     grid-area: contact;
 }
 
+#contact-details-table {
+    margin-left: 10px;
+    padding: 10px;
+}
+
+#gmap {
+    margin: 15px;
+    width: -webkit-fill-available;
+    height: 375px;
+}
+
 #footer {
     grid-area: footer;
 }

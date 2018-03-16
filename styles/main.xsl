@@ -110,7 +110,7 @@
 <!-- 			<div class="fb-page" data-href="https://www.facebook.com/cortownns" data-tabs="timeline, events" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/cortownns" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/cortownns">St. Brigid&#039;s NS, Cortown</a></blockquote></div> -->
 			<div id="fb-container">
 				<xsl:variable name="facebook-feed-link" select="PROPERTIES/FACEBOOK/@feedlink"/>
-				<iframe src="{$facebook-feed-link}" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"/>
+				<iframe id="fb-feed" src="{$facebook-feed-link}" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"/>
 			</div>
 		</div>
 		<div id="staff" class="grid-item-padding">
@@ -167,7 +167,7 @@
 			History
 		</div>
 		<div id="contact" class="grid-item-padding">
-			<table>
+			<table id="contact-details-table">
       			<colgroup>
       				<col width="40%"/>
       				<col width="60%"/>
@@ -207,7 +207,7 @@
       			</tbody>
       		</table>
       		<xsl:variable name="google-map-link" select="PROPERTIES/GOOGLE/@maplink"/>
-      		<iframe src="{$google-map-link}" width="100%" height="375" frameborder="0" style="border:0" allowfullscreen=""/>
+      		<iframe id="gmap" src="{$google-map-link}" frameborder="0" allowfullscreen=""/>
       	</div>
 		<div id="footer" class="grid-item-padding">Copyright © 2018. National School, Location. All Rights Reversed.</div>
 	</div>
