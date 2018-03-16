@@ -11,3 +11,9 @@ function closeNav() {
     document.getElementById("grid-content").style.marginLeft = "0";
     document.body.style.backgroundColor = "white";
 }
+
+/* Move the viewer back to the page top */
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}

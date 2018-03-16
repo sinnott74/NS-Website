@@ -10,6 +10,9 @@
   <xsl:output method="html" indent="yes" omit-xml-declaration="yes"
     encoding="UTF-8" />
 
+  <xsl:variable name="school-name" select="MAIN/PROPERTIES/SCHOOL/@name"/>
+  <xsl:variable name="school-add1" select="MAIN/PROPERTIES/SCHOOL/@address1"/>
+
   <xsl:template match="MAIN">
   	<xsl:call-template name="create-index"/>
   </xsl:template>
@@ -21,7 +24,7 @@
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<meta author="Greg Byrne - https://www.linkedin.com/in/greg-byrne-a4877340/"/>
-	    <title>National School - Location</title>
+	    <title><xsl:value-of select="$school-name"/> - <xsl:value-of select="$school-add1"/></title>
 		<link type="text/css" rel="stylesheet" href="ns.css"/>
 		<script src="ns.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -46,7 +49,7 @@
 		  	<a href="#history">History</a>
 		  	<a href="#contact">Contact</a>
 		</div>
-		<div class="grid content">
+		<div class="grid">
 		<div id="navigation" onclick="openNav()">
 			<div id="sidenav-toggle">
 				<div id="bar1" class="bar"></div>
@@ -54,15 +57,15 @@
 				<div id="bar3" class="bar"></div>
 			</div>
 			<div id="navigation-text">
-				<xsl:value-of select="PROPERTIES/SCHOOL/@name"/>, Location
+				<xsl:value-of select="$school-name"/>, <xsl:value-of select="$school-add1"/>
 			</div>
 		  	<!-- <button onclick="openNav()">open</button> -->
 		</div> 	 
 		<div id="banner">
 			<div id="parent-text-container">
 				<div id="banner-vid-text-overlay">
-					<h1>National School</h1>
-					<h2>Location</h2>
+					<h1><xsl:value-of select="$school-name"/></h1>
+					<h2><xsl:value-of select="$school-add1"/></h2>
 				</div>
 			</div>
 			<video autoplay="autoplay" muted="muted" loop="loop" id="vid">
@@ -209,7 +212,12 @@
       		<xsl:variable name="google-map-link" select="PROPERTIES/GOOGLE/@maplink"/>
       		<iframe id="gmap" src="{$google-map-link}" frameborder="0" allowfullscreen=""/>
       	</div>
-		<div id="footer" class="grid-item-padding">Copyright © 2018. National School, Location. All Rights Reversed.</div>
+		<div id="footer" class="grid-item-padding">
+			<div id="footer-text">
+				Copyright © <xsl:value-of select="PROPERTIES/COPYRIGHT/@years"/>. <xsl:value-of select="$school-name"/>, <xsl:value-of select="$school-add1"/>. All Rights Reversed.
+			</div>
+			<button id="footer-button" onclick="topFunction()">Back to Top</button>
+		</div>
 	</div>
   </body>
 </html>

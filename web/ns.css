@@ -100,6 +100,22 @@ body {
 
 #footer {
     grid-area: footer;
+    overflow: hidden;
+    background-color: black;
+}
+
+#footer-text {
+    color: white;
+    padding: 10px;
+    float: left;
+}
+
+#footer-button {
+    float: right;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    margin-right: 5px;
 }
 
 .grid {
@@ -264,7 +280,7 @@ body {
 }
 
 #bubble-sna {
-    background: darkgreen;
+    background: pink;
 }
 
 .bubble-title {
