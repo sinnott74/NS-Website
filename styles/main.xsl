@@ -67,15 +67,18 @@
 		</div> 	 
 		<div id="banner">
 			<div id="parent-text-container">
-				<div id="banner-vid-text-overlay">
+				<div id="banner-text-overlay">
 					<h1><xsl:value-of select="$school-name"/></h1>
 					<h2><xsl:value-of select="$school-add1"/></h2>
 				</div>
 			</div>
-			<video autoplay="autoplay" muted="muted" loop="loop" id="vid">
+			<!-- Video -->
+			<!-- <video autoplay="autoplay" muted="muted" loop="loop" id="vid">
 			  <source src="school.mp4" type="video/mp4"/>
 			  Your browser does not support the video tag.
-			</video>
+			</video> -->
+			<!-- Parallax Scroll Image -->
+			<div id="school-image" class="parallax"/>
 		</div>
 		<div id="quick-about" class="grid-item-padding">
 			<div class="bubble-container">

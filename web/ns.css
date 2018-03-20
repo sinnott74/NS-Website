@@ -23,8 +23,8 @@ body {
     grid-area: banner;
 }
 
-#banner-vid-text-overlay {
-    
+#banner-text-overlay {
+    top: 12px;
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
@@ -321,6 +321,25 @@ body {
   color:white;
   font-size:25px;
 }
+
+/* Parallax scrolling */
+.parallax { 
+    /* The image used */
+    background-image: url("school.png");
+
+    /* Set a specific height */
+    height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+</style>
 
 
 

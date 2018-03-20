@@ -17,3 +17,12 @@ function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+// Have the banner text fade on scroll
+$(window).scroll(function(){
+    $("#banner-text-overlay").css("opacity", 1 - $(window).scrollTop() / 400);
+ });
+// Have the banner text stay in position on scroll
+$(window).scroll(function(){
+    $("#banner-text-overlay").css("top", $(window).scrollTop() + 12);
+ });  
