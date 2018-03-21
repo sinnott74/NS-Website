@@ -67,10 +67,20 @@
 		</div> 	 
 		<div id="banner">
 			<div id="parent-text-container">
-				<div id="banner-text-overlay">
+				<div class="banner-text-overlay">
 					<h1><xsl:value-of select="$school-name"/></h1>
 					<h2><xsl:value-of select="$school-add1"/></h2>
 				</div>
+				<script>
+					// Have the banner text fade on scroll
+$(window).scroll(function(){
+    $(".banner-text-overlay").css("opacity", 1 - $(window).scrollTop() / 400);
+ });
+// Have the banner text stay in position on scroll
+$(window).scroll(function(){
+    $(".banner-text-overlay").css("top", $(window).scrollTop() + 12);
+ });  
+</script>
 			</div>
 			<!-- Video -->
 			<!-- <video autoplay="autoplay" muted="muted" loop="loop" id="vid">

@@ -23,7 +23,7 @@ body {
     grid-area: banner;
 }
 
-#banner-text-overlay {
+.banner-text-overlay {
     top: 12px;
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
