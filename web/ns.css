@@ -1,9 +1,4 @@
- 
-body {
-    background-color: darkgrey;
-}
-
-.grid {
+ .grid {
     display: grid;
     grid-template-areas:    "navigation navigation navigation"
                             "banner banner banner"
@@ -81,7 +76,7 @@ body {
 }
 
 #quick-news-container {
-    margin: 20px;
+    margin: 50px;
 }
 
 .news-item {
@@ -166,7 +161,6 @@ body {
 /* remove when no longer required */
 .grid > div {
     border: 2px solid rgb(0,0,0);
-    background-color: rgba(233,171,88,.5); 
 }
 
 .black-bg-color {
@@ -276,7 +270,7 @@ body {
 /**** Bubble Counters ****/
 
 .bubble-container {
-    margin: 20px;
+    margin: 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -328,7 +322,7 @@ body {
     background-image: url("school.png");
 
     /* Set a specific height */
-    height: 500px; 
+    height: 826px; 
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;

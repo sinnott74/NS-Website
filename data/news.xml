@@ -7,8 +7,10 @@
 			year="2018"
 			time="15:15"
 			title="This is the school news title"
-			>
-			  This is the latest in school news.\nIsn't it amazing!
+
+>This is the latest in school news.
+Isn't it amazing!
+
 		</NEWS-ITEM>
 		<NEWS-ITEM
 			day="4"
@@ -16,8 +18,22 @@
 			year="2018"
 			time="15:15"
 			title="School reports a news item"
-			>
-			Can you believe it?
+
+>Can you believe it?
+We have lots of school news
+
+		</NEWS-ITEM>
+		<NEWS-ITEM
+			day="1"
+			month="02"
+			year="2018"
+			time="16:15"
+			title="Green flag awarded"
+
+>The school was awarded a new green flag.
+It was a great day for all in the parish.
+Everyone was excited.
+
 		</NEWS-ITEM>
 		<NEWS-ITEM
 			day="2"
@@ -25,8 +41,9 @@
 			year="2018"
 			time="15:15"
 			title="Breaking news, a school news item"
-			>
-			Aren't we doing great?
+
+>Aren't we doing great?
+
 		</NEWS-ITEM>
 		<NEWS-ITEM
 			day="2"
@@ -34,8 +51,9 @@
 			year="2018"
 			time="15:15"
 			title="Breaking news, a school news item"
-			>
-			Aren't we doing great?
+
+>Aren't we doing great?
+
 		</NEWS-ITEM>
 		<NEWS-ITEM
 			day="2"
@@ -43,8 +61,9 @@
 			year="2018"
 			time="15:15"
 			title="Breaking news, a school news item"
-			>
-			Aren't we doing great?
+
+>Aren't we doing great?
+
 		</NEWS-ITEM>
 		<NEWS-ITEM
 			day="2"
@@ -52,8 +71,9 @@
 			year="2018"
 			time="15:15"
 			title="Breaking news, a school news item"
-			>
-			Aren't we doing great?
+
+>Aren't we doing great?
+
 		</NEWS-ITEM>
 		<NEWS-ITEM
 			day="2"
@@ -61,17 +81,9 @@
 			year="2018"
 			time="15:15"
 			title="Breaking news, a school news item"
-			>
-			Aren't we doing great?
-		</NEWS-ITEM>
-		<NEWS-ITEM
-			day="2"
-			month="03"
-			year="2018"
-			time="15:15"
-			title="Breaking news, a school news item"
-			>
-			Aren't we doing great?
+
+>Aren't we doing great?
+
 		</NEWS-ITEM>
 		<NEWS-ITEM
 			day="2"
