@@ -125,7 +125,17 @@
 					<div class="news-item">
 						<div class="news-item-date"><xsl:value-of select="concat(@day,'/',@month,'/',@year, ' ',@time)"/></div>
 						<div class="news-item-title"><xsl:value-of select="@title"/></div>
-						<div class="news-item-text-content"><xsl:value-of select="."/></div> 
+						<xsl:variable name= "news-text" select="."/>
+						<xsl:variable name="formatted-news-text">
+							<xsl:call-template name="string-replace-all">
+								<xsl:with-param name="text" select="$news-text"/>
+								<xsl:with-param name="replace" select="'\n'"/>
+								<xsl:with-param name="by" select="'&lt;br/&gt;'"/>
+							</xsl:call-template> 
+						</xsl:variable>
+						<div class="news-item-text-content">
+							<xsl:value-of select="$formatted-news-text" disable-output-escaping="yes"/>
+						</div> 
 					</div>
 					<hr/>
 					</xsl:if>
@@ -249,5 +259,25 @@
   </body>
 </html>
   </xsl:template>
+
+  <xsl:template name="string-replace-all">
+   <xsl:param name="text"/>
+   <xsl:param name="replace"/>
+   <xsl:param name="by"/>
+   <xsl:choose>
+     <xsl:when test="contains($text,$replace)">
+       <xsl:value-of select="substring-before($text,$replace)"/>
+       <xsl:value-of select="$by"/>
+       <xsl:call-template name="string-replace-all">
+         <xsl:with-param name="text" select="substring-after($text,$replace)"/>
+         <xsl:with-param name="replace" select="$replace"/>
+         <xsl:with-param name="by" select="$by"/>
+       </xsl:call-template>
+     </xsl:when>
+     <xsl:otherwise>
+       <xsl:value-of select="$text"/>
+     </xsl:otherwise>
+   </xsl:choose>
+</xsl:template>
 
 </xsl:stylesheet>
