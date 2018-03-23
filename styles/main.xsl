@@ -16,8 +16,9 @@
   <xsl:variable name="news-file" select="concat($data-dir,'/news.xml')"/>  
   <xsl:variable name="news-doc" select="document($news-file)"/>
   <xsl:variable name="news-items" select="$news-doc/MAIN/NEWS/NEWS-ITEM"/>
-  <xsl:variable name="school-name" select="MAIN/PROPERTIES/SCHOOL/@name"/>
-  <xsl:variable name="school-add1" select="MAIN/PROPERTIES/SCHOOL/@address1"/>
+  <xsl:variable name="schoolprop" select="MAIN/PROPERTIES/SCHOOL"/>
+  <xsl:variable name="school-name" select="$schoolprop/@name"/>
+  <xsl:variable name="school-add1" select="$schoolprop/@address1"/>
   <xsl:variable name="quick-news-items-allowed" select="4"/>
 
   <xsl:template match="MAIN">
@@ -80,26 +81,28 @@ $(window).scroll(function(){
 			  Your browser does not support the video tag.
 			</video> -->
 			<!-- Parallax Scroll Image -->
-			<div id="school-image" class="parallax"/>
+			<div id="school-image" class="banner-parallax"/>
 		</div>
 		<div id="quick-about" class="grid-item-padding">
-			<div class="bubble-container">
-  				<div class="single-bubble-container">
-    				<div class="bubble-title">Students</div>
-					<div class="bubble" id="bubble-student">
-						<span class="count">115</span>
-      				</div>
-        		</div>
-    			<div class="single-bubble-container">
-    				<div class="bubble-title">Teachers</div>
-					<div class="bubble" id="bubble-teacher">
-						<span class="count">5</span>
+			<div id="quick-about-bg" class="quick-about-parallax">
+				<div class="bubble-container">
+  					<div class="single-bubble-container">
+    					<div class="bubble-title">Students</div>
+						<div class="bubble" id="bubble-student">
+							<span class="count">115</span>
+      					</div>
         			</div>
-        		</div>
-        		<div class="single-bubble-container">
-    				<div class="bubble-title">Special Education Teacher</div>
-					<div class="bubble" id="bubble-sna">
-						<span class="count">1</span>
+    				<div class="single-bubble-container">
+    					<div class="bubble-title">Teachers</div>
+						<div class="bubble" id="bubble-teacher">
+							<span class="count"><xsl:value-of select="$schoolprop/@teacherCount"/></span>
+        				</div>
+        			</div>
+        			<div class="single-bubble-container">
+    					<div class="bubble-title">Special Education Teacher</div>
+						<div class="bubble" id="bubble-sna">
+							<span class="count"><xsl:value-of select="$schoolprop/@sntCount"/></span>
+        				</div>
         			</div>
         		</div>
         	</div>

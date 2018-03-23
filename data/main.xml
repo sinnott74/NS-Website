@@ -8,6 +8,9 @@
 			address3="Address3"
 			contactNumber="04692xxxxx"
 			contactEmail="school@school.ie"
+			pupilCount="115"
+			teacherCount="5"
+			sntCount="1"
 		/>
 		<FACEBOOK
 			feedLink="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCortownNS&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
