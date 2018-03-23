@@ -39,6 +39,7 @@
 	</head>
 	<body>
 		<div id="sidenav" class="sidenav" onclick="closeNav()">
+		  	<a href="index.html">Home</a>
 		  	<a href="#quick-about">About</a>
 		  	<a href="#quick-news">News</a>
 		  	<a href="#staff">Staff &amp; B.O.M</a>
@@ -89,7 +90,7 @@ $(window).scroll(function(){
   					<div class="single-bubble-container">
     					<div class="bubble-title">Students</div>
 						<div class="bubble" id="bubble-student">
-							<span class="count">115</span>
+							<span class="count"><xsl:value-of select="$schoolprop/@pupilCount"/></span>
       					</div>
         			</div>
     				<div class="single-bubble-container">
@@ -176,7 +177,74 @@ $(window).scroll(function(){
 				<iframe id="fb-feed" src="{$facebook-feed-link}" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"/>
 			</div>
 		</div>
-		<div id="staff" class="grid-item-padding">
+		<div id="contact" class="grid-item-padding">
+			<div id="contact-title">
+				<h2>Contact Us</h2>
+			</div>
+			<div id="contact-container">
+				<div id="contact-phone" class="contact-item">
+					<img src="icons/phone-24.ico" alt="Phone" class="contact-item-icon"/>
+					<xsl:variable name="school-contact-num" select="PROPERTIES/SCHOOL/@contactNumber"/>
+					<a href="tel:{$school-contact-num}"><xsl:value-of select="$school-contact-num"/></a>
+				</div>
+				<div id="contact-email" class="contact-item">
+					<img src="icons/email-24.ico" alt="Email" class="contact-item-icon"/>
+					<xsl:variable name="school-contact-email" select="PROPERTIES/SCHOOL/@contactEmail"/>
+					<a href="mailto:{$school-contact-email}"><xsl:value-of select="$school-contact-email"/></a>
+				</div>
+				<div id="contact-facebook" class="contact-item">
+					<img src="icons/facebook-24.ico" alt="Facebook" class="contact-item-icon"/>
+					<xsl:variable name="fb-link" select="PROPERTIES/FACEBOOK/@link"/>
+      				<a href="{$fb-link}"><xsl:value-of select="$school-name"/></a>
+				</div>
+			</div>
+			
+			<!-- <table id="contact-details-table">
+      			<colgroup>
+      				<col width="40%"/>
+      				<col width="60%"/>
+      			</colgroup>
+      			<tbody>
+      				<tr>
+      					<td class="phone-text">
+      					   Phone:
+      					</td>
+      					<td class="contact-value">
+      						<xsl:variable name="school-contact-num" select="PROPERTIES/SCHOOL/@contactNumber"/>
+							<a href="tel:{$school-contact-num}"><xsl:value-of select="$school-contact-num"/></a>
+      					</td>
+      				</tr>
+      				<tr>
+      					<td class="email-text">
+      						 Email:
+      					</td>
+      					<td class="contact-value">
+      						<xsl:variable name="school-contact-email" select="PROPERTIES/SCHOOL/@contactEmail"/>
+							<a href="mailto:{$school-contact-email}"><xsl:value-of select="$school-contact-email"/></a>
+      					</td>
+      				</tr>
+      				<tr>
+      					<td class="fb-text">
+      						 Facebook:
+      					</td>
+      					<td class="fb-value">
+      						<xsl:variable name="fb-link" select="PROPERTIES/FACEBOOK/@link"/>
+      						<a href="{$fb-link}"><xsl:value-of select="$school-name"/></a>
+      					</td>
+      				</tr>
+      			</tbody>
+      		</table> -->
+      		<xsl:variable name="google-map-link" select="PROPERTIES/GOOGLE/@mapLink"/>
+      		<iframe id="gmap" src="{$google-map-link}" frameborder="0" allowfullscreen=""/>
+      	</div>
+		<div id="footer" class="grid-item-padding">
+			<div id="footer-text">
+				Copyright © <xsl:value-of select="PROPERTIES/COPYRIGHT/@years"/>. <xsl:value-of select="$school-name"/>, <xsl:value-of select="$school-add1"/>. All Rights Reversed.
+			</div>
+			<button id="footer-button" onclick="topFunction()">Back to Top</button>
+		</div>
+	</div>
+		<!-- <div id="staff" class="grid-item-padding">
 			<table>
 				<colgroup>
 					<col width="30%"/>
@@ -224,64 +292,7 @@ $(window).scroll(function(){
 					</tr>
 				</tbody>
 			</table>
-		</div>
-		<div id="policies" class="grid-item-padding">Policies</div>
-		<div id="history" class="grid-item-padding">
-			History
-		</div>
-		<div id="contact" class="grid-item-padding">
-			<table id="contact-details-table">
-      			<colgroup>
-      				<col width="40%"/>
-      				<col width="60%"/>
-      			</colgroup>
-      			<thead>
-      				<tr> 
-      					<td colspan="2">
-      						Contact
-      					</td>
-      				</tr>
-      			</thead>
-      			<tbody>
-      				<tr>
-      					<td class="phone-text">
-      					   Phone:
-      					</td>
-      					<td class="contact-value">
-      						<xsl:variable name="school-contact-num" select="PROPERTIES/SCHOOL/@contactNumber"/>
-							<a href="tel:{$school-contact-num}"><xsl:value-of select="$school-contact-num"/></a>
-      					</td>
-      				</tr>
-      				<tr>
-      					<td class="email-text">
-      						 Email:
-      					</td>
-      					<td class="contact-value">
-      						<xsl:variable name="school-contact-email" select="PROPERTIES/SCHOOL/@contactEmail"/>
-							<a href="mailto:{$school-contact-email}"><xsl:value-of select="$school-contact-email"/></a>
-      					</td>
-      				</tr>
-      				<tr>
-      					<td class="fb-text">
-      						 Facebook:
-      					</td>
-      					<td class="fb-value">
-      						<xsl:variable name="fb-link" select="PROPERTIES/FACEBOOK/@link"/>
-      						<a href="{$fb-link}"><xsl:value-of select="$school-name"/></a>
-      					</td>
-      				</tr>
-      			</tbody>
-      		</table>
-      		<xsl:variable name="google-map-link" select="PROPERTIES/GOOGLE/@mapLink"/>
-      		<iframe id="gmap" src="{$google-map-link}" frameborder="0" allowfullscreen=""/>
-      	</div>
-		<div id="footer" class="grid-item-padding">
-			<div id="footer-text">
-				Copyright © <xsl:value-of select="PROPERTIES/COPYRIGHT/@years"/>. <xsl:value-of select="$school-name"/>, <xsl:value-of select="$school-add1"/>. All Rights Reversed.
-			</div>
-			<button id="footer-button" onclick="topFunction()">Back to Top</button>
-		</div>
-	</div>
+		</div> -->
   </body>
 </html>
   </xsl:template>
