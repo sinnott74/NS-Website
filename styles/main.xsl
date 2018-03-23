@@ -124,6 +124,9 @@ $(window).scroll(function(){
         	</div> -->
 		</div>		
 		<div id="quick-news" class="grid-item-padding">
+			<div id="quick-news-title">
+				<h2>School News</h2>
+			</div>
 			<div id="quick-news-container">
 				<xsl:for-each select="$news-items">
 					<xsl:sort select="@year" order="descending"/>
