@@ -34,6 +34,8 @@
 		<meta author="Greg Byrne - https://www.linkedin.com/in/greg-byrne-a4877340/"/>
 	    <title><xsl:value-of select="$school-name"/> - <xsl:value-of select="$school-add1"/></title>
 		<link type="text/css" rel="stylesheet" href="ns.css"/>
+		<link href='https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded' rel='stylesheet' type='text/css'/>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
 		<script src="ns.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	</head>
@@ -63,7 +65,7 @@
 			<div id="parent-text-container">
 				<div class="banner-text-overlay">
 					<h1><xsl:value-of select="$school-name"/></h1>
-					<h2><xsl:value-of select="$school-add1"/></h2>
+					<h2><xsl:value-of select="$school-add1"/>, <xsl:value-of select="$schoolprop/@address2"/>, <xsl:value-of select="$schoolprop/@address3"/></h2>
 				</div>
 				<script>
 					// Have the banner text fade on scroll

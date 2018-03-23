@@ -25,6 +25,11 @@
     color: #f1f1f1;
     padding-left: 20px;
     width: -webkit-fill-available;
+    font-family: 'Stint Ultra Expanded', cursive;
+}
+
+h1, h2 {
+    font-family: 'Stint Ultra Expanded', cursive;
 }
 
 #parent-text-container {
@@ -112,12 +117,18 @@
     font-size: 80%;
 }
 
+.news-item-date, .news-item-title, .contact-item, #footer-text, #footer-button, #navigation-text, .bubble-title, #more-news-redirect-button, #sidenav a {
+    font-family: 'Lucida Grande', sans-serif;
+}
+
 .news-item-text-content {
     padding-top: 3px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #more-news-redirect-button {
-    height: -webkit-fill-available;
+    padding: 5px;
+    font-size: 15px;
 }
 
 #fb {
@@ -327,6 +338,7 @@
 .single-bubble-container{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .bubble {
@@ -340,6 +352,7 @@
   float:left;
   margin-left: 20px;
   margin-right: 20px;
+  box-shadow: 1px 1px;
 }
 
 #bubble-student {
@@ -383,6 +396,7 @@
 .quick-about-parallax { 
     /* The image used */
     background-image: url("img/pencil.jpg");
+    background-blend-mode: lighten;
 
     /* Set a specific height */
     height: 300px; 
