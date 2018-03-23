@@ -19,7 +19,7 @@
   <xsl:variable name="schoolprop" select="MAIN/PROPERTIES/SCHOOL"/>
   <xsl:variable name="school-name" select="$schoolprop/@name"/>
   <xsl:variable name="school-add1" select="$schoolprop/@address1"/>
-  <xsl:variable name="quick-news-items-allowed" select="4"/>
+  <xsl:variable name="quick-news-items-allowed" select="3"/>
 
   <xsl:template match="MAIN">
   	<xsl:call-template name="create-index"/>
@@ -129,17 +129,21 @@ $(window).scroll(function(){
 			</div>
 			<div id="quick-news-container">
 				<xsl:for-each select="$news-items">
-					<xsl:sort select="@year" order="descending"/>
-					<xsl:sort select="@month" order="descending"/>
-					<xsl:sort select="@day" order="descending"/>
+					<xsl:sort select="@yyyyMMdd" order="descending"/>
+					<xsl:sort select="@time" order="descending"/>
 					<xsl:if test="position() &lt; ($quick-news-items-allowed+1)">
 					<div class="news-item">
-						<div class="news-item-date"><xsl:value-of select="concat(@day,'/',@month,'/',@year, ' ',@time)"/></div>
-						<div class="news-item-title"><xsl:value-of select="@title"/></div>
+						<div class="news-item-date">
+							<xsl:call-template name="format-datetime-for-display">
+								<xsl:with-param name="yyyyMMdd" select="@yyyyMMdd"/>
+								<xsl:with-param name="time" select="@time"/>
+							</xsl:call-template>
+						</div>
+						<div class="news-item-title"><xsl:value-of select="title/text()"/></div>
 						<div class="news-item-text-content">
 							<xsl:variable name="news-item-text">
 								<xsl:call-template name="string-replace-all">
-									<xsl:with-param name="text" select="./text()"/>
+									<xsl:with-param name="text" select="content/text()"/>
              				    	<xsl:with-param name="replace" select="$spacechar"/>
                 					<xsl:with-param name="by"><xsl:text>&lt;br/&gt;</xsl:text></xsl:with-param>
 								</xsl:call-template>
@@ -147,9 +151,22 @@ $(window).scroll(function(){
 							<xsl:value-of select="$news-item-text" disable-output-escaping="yes"/>
 						</div> 
 					</div>
-					<hr/>
 					</xsl:if>
 				</xsl:for-each>
+				<!-- Colours each news item box -->
+				<script>
+						var newsItems = document.getElementsByClassName('news-item');
+						var availableColors = ['#FFE1E0', '#E7FBEA', '#E7E7FF', '#FFE5FF', '#FFFFE7'];
+						
+
+						for(var i = 0; i &lt; newsItems.length; i++) {
+							var randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
+							newsItems[i].style.backgroundColor = randomColor;
+							newsItems[i].style.boxShadow = "2px 2px";
+							
+							availableColors.splice(availableColors.indexOf(randomColor),1);
+						}
+					</script>
 			</div>
 			<button id="more-news-redirect-button">More News</button>
 		</div>
@@ -288,6 +305,16 @@ $(window).scroll(function(){
        <xsl:value-of select="$text"/>
      </xsl:otherwise>
    </xsl:choose>
+</xsl:template>
+
+<xsl:template name="format-datetime-for-display">
+	<xsl:param name="yyyyMMdd"/>
+	<xsl:param name="time"/>
+	<xsl:variable name="year" select="substring($yyyyMMdd, 1, 4)"/>
+	<xsl:variable name="month" select="substring($yyyyMMdd, 5, 2)"/>
+	<xsl:variable name="date" select="substring($yyyyMMdd, 7, 2)"/>
+	<xsl:variable name="time-formatted" select="concat(substring($time, 1, 2),':',substring($time, 3, 2))"/>
+	<xsl:value-of select="concat($date, '/', $month, '/', $year,'  ',$time-formatted)"/>
 </xsl:template>
 
 </xsl:stylesheet>
