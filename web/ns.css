@@ -1,4 +1,4 @@
- .grid {
+ .index-grid {
     display: grid;
     grid-template-areas:    "navigation navigation navigation"
                             "banner banner banner"
@@ -12,6 +12,15 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
                 
+}
+
+.other-page-grid {
+    display: grid;
+    grid-template-areas:    "navigation"
+                            "content"
+                            "footer";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
 }
 
 #banner {
@@ -179,17 +188,6 @@ h1, h2 , .banner-text-overlay {
     padding-right: 5px;
 }
 
-/*#contact-details-table {
-    margin-left: 10px;
-    padding: 10px;
-}
-
-#contact-details-table td,th {
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    padding: 10px;
-}*/
-
 #gmap {
     margin: 15px;
     width: -webkit-fill-available;
@@ -218,33 +216,20 @@ h1, h2 , .banner-text-overlay {
     margin-right: 5px;
 }
 
-.black-bg-color {
-    background-color: black;
+#content {
+    grid-area: content;
 }
 
-.orange-bg {
-    background: orange;
+.content-container {
+    background-color: #E4E1E0;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.dark-green-bg {
-    background: darkgreen;
-}
-
-.fill-available-width {
-    width: -webkit-fill-available;
-}
-
-.full-width {
-    width: 100%;
-}
-
-.center-grid-item {
-   justify-self: center;
-}
-
-.center-text-content {
-    text-align: center;
-    vertical-align: middle;
+.content-item {
+   margin: 100px;
 }
 
 /******* menu icon ********/

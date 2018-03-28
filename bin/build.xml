@@ -42,6 +42,10 @@
         expression="${dir.data}" 
         name="data-dir"
       />
+      <param
+        expression="${dir.web}" 
+        name="web-dir"
+      />
     </xslt>
   </target>
   
