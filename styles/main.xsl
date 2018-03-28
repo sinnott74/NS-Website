@@ -8,6 +8,8 @@
   extension-element-prefixes="redirect">
 
   <xsl:output method="html" indent="yes" omit-xml-declaration="yes" encoding="UTF-8" />
+
+  <xsl:strip-space elements="*"/>
   
   <xsl:param name="data-dir" select="'data'" />
   <xsl:param name="web-dir" select="'web'"/>
@@ -30,6 +32,7 @@
   <xsl:template match="MAIN">
   	<xsl:call-template name="create-index-page"/>
   	<xsl:call-template name="create-history-page"/>
+  	<xsl:call-template name="create-staff-page"/>
   </xsl:template>
 
   	<xsl:template name="create-index-page">
@@ -75,6 +78,80 @@
   		</redirect:write>
   	</xsl:template>
 
+  	<xsl:template name="create-staff-page">
+  		<redirect:write file="{$web-dir}/staff.html">
+  			<html>
+  				<xsl:call-template name="html-header"/>
+  				<body>
+	  				<xsl:call-template name="sidenav-bar"/>
+  					<div id="other-page-grid">
+  						<xsl:call-template name="navigation-bar"/>
+  						<div id="content">
+  							<div class="content-container">
+  								<div class="content-item" id="staff">
+  									<h2>Staff</h2>
+  									<div class="members-table-container">
+  										<table class="members" id="staff-member-table">
+	  										<thead>
+  												<tr>
+  													<td>Staff Member</td>
+  													<td>Role(s)</td>
+  												</tr>
+  											</thead>
+  											<tbody>
+  												<xsl:for-each select="$schoolprop/STAFF/MEMBER">
+  													<tr>
+  														<td><xsl:value-of select="@name"/></td>
+	  													<td>	
+  															<xsl:value-of select="ROLE"/>
+  															<xsl:if test="ROLE != '' and ROLE/TEACHER">
+  																<xsl:text>, </xsl:text>
+	  														</xsl:if>
+  															<xsl:if test="ROLE/TEACHER">
+  																<xsl:text>Teacher (</xsl:text>
+  																<xsl:value-of select="ROLE/TEACHER/@class"/>
+  																<xsl:text> class)</xsl:text>
+  															</xsl:if>
+  														</td>
+  													</tr>
+  												</xsl:for-each>
+  											</tbody>
+  										</table>
+  									</div>
+  									<h2>Board of Management</h2>
+  									<div class="members-table-container">
+	  									<table class="members" id="bom-member-table">
+  											<thead>
+  												<tr>
+  													<td>B.O.M. Member</td>
+  													<td>Role(s)</td>
+  												</tr>
+  											</thead>
+  											<tbody>
+  												<xsl:for-each select="$schoolprop/BOM/MEMBER">
+  													<tr>
+  														<td><xsl:value-of select="@name"/></td>
+	  													<td>	
+  															<xsl:for-each select="ROLE">
+	  															<xsl:value-of select="."/>
+  																<xsl:if test="position() != last()"><xsl:text>, </xsl:text></xsl:if>
+  															</xsl:for-each>
+  														</td>
+  													</tr>
+  												</xsl:for-each>
+  											</tbody>
+  										</table>
+  									</div>
+	  							</div>
+  							</div>
+  						</div>
+  						<xsl:call-template name="footer"/>
+  					</div>
+  				</body>
+  			</html>
+  		</redirect:write>
+  	</xsl:template>
+
  	<xsl:template name="html-header">
   		<head>
 			<meta charset="UTF-8"/>
@@ -92,9 +169,8 @@
   	<xsl:template name="sidenav-bar">
   		<div id="sidenav" class="sidenav" onclick="closeNav()">
 			<a href="index.html">Home</a>
-			<a href="#quick-about">About</a>
 			<a href="#quick-news">News</a>
-			<a href="#staff">Staff &amp; B.O.M</a>
+			<a href="staff.html">Staff &amp; B.O.M</a>
 			<a href="#policies">Policies</a>
 			<a href="#history">Calendar</a>
 			<a href="history.html">History</a>
