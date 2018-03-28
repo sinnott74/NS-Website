@@ -25,10 +25,9 @@
     color: #f1f1f1;
     padding-left: 20px;
     width: -webkit-fill-available;
-    font-family: 'Stint Ultra Expanded', cursive;
 }
 
-h1, h2 {
+h1, h2 , .banner-text-overlay {
     font-family: 'Stint Ultra Expanded', cursive;
 }
 
@@ -332,7 +331,7 @@ h1, h2 {
     margin: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .single-bubble-container{
@@ -352,23 +351,25 @@ h1, h2 {
   float:left;
   margin-left: 20px;
   margin-right: 20px;
+  border: 1px solid;
   box-shadow: 1px 1px;
 }
 
 #bubble-student {
-    background: orange;
+    background: #CE0000;
 }
 
 #bubble-teacher {
-    background: darkgreen;
+    background: #00A000;
 }
 
 #bubble-sna {
-    background: pink;
+    background: #1A00FF;
 }
 
 .bubble-title {
     align-self: center;
+    color: white;
 }
 
 .count {
@@ -377,30 +378,24 @@ h1, h2 {
   font-size:25px;
 }
 
-/* Parallax scrolling */
 .banner-parallax { 
     /* The image used */
     background-image: url("img/school.png");
 
     /* Set a specific height */
     height: 826px; 
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
-/* Parallax scrolling */
 .quick-about-parallax { 
-    /* The image used */
-    background-image: url("img/pencil.jpg");
-    background-blend-mode: lighten;
+    /* The (darkened) image used */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(img/pencil.jpg);
 
     /* Set a specific height */
     height: 300px; 
 
+}
+
+.banner-parallax, .quick-about-parallax {
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
