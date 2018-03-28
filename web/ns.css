@@ -230,6 +230,8 @@ h1, h2 , .banner-text-overlay {
 
 .content-item {
    margin: 100px;
+   margin-top: 30px;
+   margin-bottom: 30px;
 }
 
 /******* menu icon ********/

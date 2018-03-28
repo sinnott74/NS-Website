@@ -11,8 +11,8 @@
   
   <xsl:param name="data-dir" select="'data'" />
   <xsl:param name="web-dir" select="'web'"/>
-    
-  <xsl:variable name="spacechar" select="'&#10;'"/>
+   
+  <xsl:import href="utils.xsl"/>
 
   <xsl:variable name="news-file" select="concat($data-dir,'/news.xml')"/>  
   <xsl:variable name="news-doc" select="document($news-file)"/>
