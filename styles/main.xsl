@@ -31,6 +31,7 @@
 
   <xsl:template match="MAIN">
   	<xsl:call-template name="create-index-page"/>
+  	<xsl:call-template name="create-news-page"/>
   	<xsl:call-template name="create-history-page"/>
   	<xsl:call-template name="create-staff-page"/>
   </xsl:template>
@@ -68,6 +69,31 @@
   									<xsl:call-template name="replace-newline-with-pagebreak">
 										<xsl:with-param name="text" select="$history"/>
 									</xsl:call-template>
+	  							</div>
+  							</div>
+  						</div>
+  						<xsl:call-template name="footer"/>
+  					</div>
+  				</body>
+  			</html>
+  		</redirect:write>
+  	</xsl:template>
+
+  	<xsl:template name="create-news-page">
+  		<redirect:write file="{$web-dir}/news.html">
+  			<html>
+  				<xsl:call-template name="html-header"/>
+  				<body>
+	  				<xsl:call-template name="sidenav-bar"/>
+  					<div id="other-page-grid">
+  						<xsl:call-template name="navigation-bar"/>
+  						<div id="content">
+  							<div class="content-container">
+  								<div class="content-item" id="history">
+  									<h2>News</h2>
+  									<div id="news-container">
+  										<xsl:call-template name="news-items"/>
+  									</div>
 	  							</div>
   							</div>
   						</div>
@@ -256,29 +282,9 @@ $(window).scroll(function(){
 				<h2>School News</h2>
 			</div>
 			<div id="quick-news-container">
-				<xsl:for-each select="$news-items">
-					<xsl:sort select="@yyyyMMdd" order="descending"/>
-					<xsl:sort select="@time" order="descending"/>
-					<xsl:if test="position() &lt; ($quick-news-items-allowed+1)">
-					<div class="news-item">
-						<div class="news-item-date">
-							<xsl:call-template name="format-datetime-for-display">
-								<xsl:with-param name="yyyyMMdd" select="@yyyyMMdd"/>
-								<xsl:with-param name="time" select="@time"/>
-							</xsl:call-template>
-						</div>
-						<div class="news-item-title"><xsl:value-of select="title/text()"/></div>
-						<div class="news-item-text-content">
-							<xsl:variable name="news-item-text">
-								<xsl:call-template name="replace-newline-with-pagebreak">
-									<xsl:with-param name="text" select="content/text()"/>
-								</xsl:call-template>
-							</xsl:variable>
-							<xsl:value-of select="$news-item-text" disable-output-escaping="yes"/>
-						</div> 
-					</div>
-					</xsl:if>
-				</xsl:for-each>
+				<xsl:call-template name="news-items">
+					<xsl:with-param name="news-items-allowed" select="$quick-news-items-allowed"/>
+				</xsl:call-template>
 				<!-- Colours each news item box -->
 				<script>
 						var newsItems = document.getElementsByClassName('news-item');
@@ -294,8 +300,35 @@ $(window).scroll(function(){
 						}
 				</script>
 			</div>
-			<button id="more-news-redirect-button">More News</button>
+			<button id="more-news-redirect-button" onclick="location.href='news.html';">More News</button>
 		</div>
+  	</xsl:template>
+
+  	<xsl:template name="news-items">
+  		<xsl:param name="news-items-allowed" select="100"/>
+  		<xsl:for-each select="$news-items">
+			<xsl:sort select="@yyyyMMdd" order="descending"/>
+			<xsl:sort select="@time" order="descending"/>
+			<xsl:if test="position() &lt; ($news-items-allowed+1)">
+				<div class="news-item">
+					<div class="news-item-date">
+						<xsl:call-template name="format-datetime-for-display">
+							<xsl:with-param name="yyyyMMdd" select="@yyyyMMdd"/>
+							<xsl:with-param name="time" select="@time"/>
+						</xsl:call-template>
+					</div>
+					<div class="news-item-title"><xsl:value-of select="title/text()"/></div>
+					<div class="news-item-text-content">
+						<xsl:variable name="news-item-text">
+							<xsl:call-template name="replace-newline-with-pagebreak">
+								<xsl:with-param name="text" select="content/text()"/>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:value-of select="$news-item-text" disable-output-escaping="yes"/>
+					</div> 
+				</div>
+			</xsl:if>
+		</xsl:for-each>
   	</xsl:template>
 
   	<xsl:template name="facebook-feed">
