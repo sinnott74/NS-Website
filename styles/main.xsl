@@ -169,12 +169,12 @@
   	<xsl:template name="sidenav-bar">
   		<div id="sidenav" class="sidenav" onclick="closeNav()">
 			<a href="index.html">Home</a>
-			<a href="#quick-news">News</a>
+			<a href="news.html">News</a>
 			<a href="staff.html">Staff &amp; B.O.M</a>
-			<a href="#policies">Policies</a>
-			<a href="#history">Calendar</a>
+			<a href="policies.html">Policies</a>
+			<a href="calendar.html">Calendar</a>
 			<a href="history.html">History</a>
-			<a href="#contact">Contact</a>
+			<a href="index.html#contact">Contact</a>
 		</div>
   	</xsl:template>
 
