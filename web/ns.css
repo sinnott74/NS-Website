@@ -112,6 +112,14 @@ h1, h2 , .banner-text-overlay {
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid;
+    font-size: 100%;
+   /* position: unset;*/
+
+}
+
+.news-item:hover {
+    font-size: 200%;
+    /*position: absolute;*/
 }
 
 .news-item-title {
