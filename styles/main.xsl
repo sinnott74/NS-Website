@@ -186,14 +186,24 @@
 					<h2><xsl:value-of select="$school-add1"/>, <xsl:value-of select="$schoolprop/@address2"/>, <xsl:value-of select="$schoolprop/@address3"/></h2>
 				</div>
 				<script>
-					// Have the banner text fade on scroll
+// Have the banner text fade on scroll
 $(window).scroll(function(){
     $(".banner-text-overlay").css("opacity", 1 - $(window).scrollTop() / 550);
+
+    var bannerTextOpacity = $(".banner-text-overlay").css("opacity");
+ 	if(bannerTextOpacity > 0) {
+ 		$(".banner-text-overlay").css("z-index", 0);
+ 	} else {
+ 		$(".banner-text-overlay").css("z-index", -1);
+ 	}
  });
+
 // Have the banner text stay in position on scroll
 $(window).scroll(function(){
     $(".banner-text-overlay").css("top", $(window).scrollTop() + 12);
- });  
+ }); 
+
+
 				</script>
 			</div>
 			<div id="school-image" class="banner-parallax"/>
