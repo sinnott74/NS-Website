@@ -367,6 +367,10 @@ h1, h2 , .banner-text-overlay {
     align-items: center;
 }
 
+.single-bubble-container:hover {
+    transform: scale(1.5);
+}
+
 .bubble {
   display: flex;
   justify-content: center;
