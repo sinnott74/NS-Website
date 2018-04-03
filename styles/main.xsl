@@ -34,6 +34,7 @@
   	<xsl:call-template name="create-news-page"/>
   	<xsl:call-template name="create-history-page"/>
   	<xsl:call-template name="create-staff-page"/>
+  	<xsl:call-template name="create-policies-page"/>
   </xsl:template>
 
   	<xsl:template name="create-index-page">
@@ -65,10 +66,12 @@
   						<div id="content">
   							<div class="content-container">
   								<div class="content-item" id="history">
-  									<h2>History</h2>
-  									<xsl:call-template name="replace-newline-with-pagebreak">
-										<xsl:with-param name="text" select="$history"/>
-									</xsl:call-template>
+  									<h1>History</h1>
+  									<p>
+  										<xsl:call-template name="replace-newline-with-pagebreak">
+											<xsl:with-param name="text" select="$history"/>
+										</xsl:call-template>
+									</p>
 	  							</div>
   							</div>
   						</div>
@@ -89,8 +92,8 @@
   						<xsl:call-template name="navigation-bar"/>
   						<div id="content">
   							<div class="content-container">
-  								<div class="content-item" id="history">
-  									<h2>News</h2>
+  								<div class="content-item" id="news">
+  									<h1>News</h1>
   									<div id="news-container">
   										<xsl:call-template name="news-items"/>
   									</div>
@@ -115,7 +118,7 @@
   						<div id="content">
   							<div class="content-container">
   								<div class="content-item" id="staff">
-  									<h2>Staff</h2>
+  									<h1>Staff</h1>
   									<div class="members-table-container">
   										<table class="members" id="staff-member-table">
 	  										<thead>
@@ -144,7 +147,7 @@
   											</tbody>
   										</table>
   									</div>
-  									<h2>Board of Management</h2>
+  									<h1>Board of Management</h1>
   									<div class="members-table-container">
 	  									<table class="members" id="bom-member-table">
   											<thead>
@@ -168,6 +171,29 @@
   											</tbody>
   										</table>
   									</div>
+	  							</div>
+  							</div>
+  						</div>
+  						<xsl:call-template name="footer"/>
+  					</div>
+  				</body>
+  			</html>
+  		</redirect:write>
+  	</xsl:template>
+
+  	<xsl:template name="create-policies-page">
+  		<redirect:write file="{$web-dir}/policies.html">
+  			<html>
+  				<xsl:call-template name="html-header"/>
+  				<body>
+	  				<xsl:call-template name="sidenav-bar"/>
+  					<div id="other-page-grid">
+  						<xsl:call-template name="navigation-bar"/>
+  						<div id="content">
+  							<div class="content-container">
+  								<div class="content-item" id="policies">
+  									<h1>Policies</h1>
+  									
 	  							</div>
   							</div>
   						</div>
