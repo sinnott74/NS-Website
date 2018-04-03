@@ -132,11 +132,11 @@ h1, h2 , .banner-text-overlay {
     font-size: 80%;
 }
 
-.news-item-date, .news-item-title, .contact-item, #footer-text, #footer-button, #navigation-text, .bubble-title, #more-news-redirect-button, #sidenav a, .members thead, p {
+.news-item-date, .news-item-title, .contact-item, #footer-text, #footer-button, #navigation-text, .bubble-title, #more-news-redirect-button, #sidenav a, .members thead, .accordion {
     font-family: 'Lucida Grande', sans-serif;
 }
 
-.news-item-text-content, .members tbody {
+.news-item-text-content, .members tbody, p, .panel {
     padding-top: 3px;
     font-family: 'Roboto', sans-serif;
 }
@@ -431,6 +431,53 @@ h1, h2 , .banner-text-overlay {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/* Accordian widget */
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-size: 20px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-item {
+    padding: 10px;
+}
+
+.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
 </style>

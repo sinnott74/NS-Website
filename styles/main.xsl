@@ -193,7 +193,44 @@
   							<div class="content-container">
   								<div class="content-item" id="policies">
   									<h1>Policies</h1>
-  									
+  									<xsl:for-each select="$schoolprop/POLICIES/POLICY">
+  										<xsl:variable name="policy-file-name" select="@name"/>
+  										<xsl:variable name="policy-file" select="@relativeFileLocation"/>
+  										<button class="accordion"><xsl:value-of select="@name"/></button>
+										<div class="panel">
+											<xsl:if test="./text()">
+												<span class="panel-item">
+													<xsl:call-template name="replace-newline-with-pagebreak">
+														<xsl:with-param name="text" select="./text()"/>
+													</xsl:call-template>
+												</span>
+											</xsl:if>
+  											<xsl:if test="@relativeFileLocation">
+  												<span class="panel-item">
+  													<a href="./{$policy-file}">View</a>
+  												</span>
+  												<span class="panel-item">
+  													<a href="./{$policy-file}" download="{$policy-file-name}">Download</a>
+												</span>
+  											</xsl:if>
+										</div>
+  									</xsl:for-each>
+									<script>
+										var acc = document.getElementsByClassName("accordion");
+										var i;
+
+										for (i = 0; i &lt; acc.length; i++) {
+  											acc[i].addEventListener("click", function() {
+    										this.classList.toggle("active");
+    										var panel = this.nextElementSibling;
+    										if (panel.style.maxHeight){
+      											panel.style.maxHeight = null;
+    										} else {
+      											panel.style.maxHeight = panel.scrollHeight + "px";
+    										} 
+  										});
+									}
+									</script>
 	  							</div>
   							</div>
   						</div>
