@@ -216,22 +216,6 @@
   											</xsl:if>
 										</div>
   									</xsl:for-each>
-									<script>
-										var acc = document.getElementsByClassName("accordion");
-										var i;
-
-										for (i = 0; i &lt; acc.length; i++) {
-  											acc[i].addEventListener("click", function() {
-    										this.classList.toggle("active");
-    										var panel = this.nextElementSibling;
-    										if (panel.style.maxHeight){
-      											panel.style.maxHeight = null;
-    										} else {
-      											panel.style.maxHeight = panel.scrollHeight + "px";
-    										} 
-  										});
-									}
-									</script>
 	  							</div>
   							</div>
   						</div>
@@ -287,8 +271,8 @@
 			<link type="text/css" rel="stylesheet" href="ns.css"/>
 			<link href='https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded' rel='stylesheet' type='text/css'/>
 			<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
-			<script src="ns.js"></script>
 			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+			<script src="ns.js"></script>
 		</head>
   	</xsl:template>
 
@@ -311,26 +295,6 @@
 					<h1><xsl:value-of select="$school-name"/></h1>
 					<h2><xsl:value-of select="$school-add1"/>, <xsl:value-of select="$schoolprop/@address2"/>, <xsl:value-of select="$schoolprop/@address3"/></h2>
 				</div>
-				<script>
-// Have the banner text fade on scroll
-$(window).scroll(function(){
-    $(".banner-text-overlay").css("opacity", 1 - $(window).scrollTop() / 550);
-
-    var bannerTextOpacity = $(".banner-text-overlay").css("opacity");
- 	if(bannerTextOpacity > 0) {
- 		$(".banner-text-overlay").css("z-index", 0);
- 	} else {
- 		$(".banner-text-overlay").css("z-index", -1);
- 	}
- });
-
-// Have the banner text stay in position on scroll
-$(window).scroll(function(){
-    $(".banner-text-overlay").css("top", $(window).scrollTop() + 12);
- }); 
-
-
-				</script>
 			</div>
 			<div id="school-image" class="banner-parallax"/>
 		</div>
@@ -360,19 +324,6 @@ $(window).scroll(function(){
         			</div>
         		</div>
         	</div>
-			<script>
-	$('.count').each(function () {
-    	$(this).prop('Counter',0).animate({
-        	Counter: $(this).text()
-    	}, {
-        	duration: 6000,
-        	easing: 'swing',
-        	step: function (now) {
-            	$(this).text(Math.ceil(now));
-        	}
-    	});
-	});
-			</script>
 		</div>	
   	</xsl:template>
 
@@ -385,20 +336,6 @@ $(window).scroll(function(){
 				<xsl:call-template name="news-items">
 					<xsl:with-param name="news-items-allowed" select="$quick-news-items-allowed"/>
 				</xsl:call-template>
-				<!-- Colours each news item box -->
-				<script>
-						var newsItems = document.getElementsByClassName('news-item');
-						var availableColors = ['#FFE1E0', '#E7FBEA', '#E7E7FF', '#FFE5FF', '#FFFFE7'];
-						
-
-						for(var i = 0; i &lt; newsItems.length; i++) {
-							var randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
-							newsItems[i].style.backgroundColor = randomColor;
-							newsItems[i].style.boxShadow = "2px 2px";
-							
-							availableColors.splice(availableColors.indexOf(randomColor),1);
-						}
-				</script>
 			</div>
 			<button id="more-news-redirect-button" onclick="location.href='news.html';">More News</button>
 		</div>
