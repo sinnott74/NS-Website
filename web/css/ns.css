@@ -44,11 +44,6 @@ h1, h2 , .banner-text-overlay {
     position:relative;
 }
 
-#vid {
-    grid-area: banner;
-    width: 100%;
-}
-
 #navigation {
     grid-area: navigation;
     overflow: hidden;
