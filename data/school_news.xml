@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MAIN>
+<SCHOOL_NEWS>
 	<NEWS
 		quick-news-items="3"
 		>
@@ -89,4 +89,4 @@ We will be looking for nominations for parent’s nominees shortly. </content>
 
 		
 	</NEWS>
-</MAIN>
+</SCHOOL_NEWS>

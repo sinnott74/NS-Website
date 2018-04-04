@@ -73,11 +73,6 @@ h1, h2 , .banner-text-overlay {
       color: black;
   }
 
-#sidenav {
-    grid-area: sidenav;
-    z-index: 20;
-}
-
 #quick-about {
     grid-area: quick-about;
 }
@@ -300,7 +295,7 @@ h1, h2 , .banner-text-overlay {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    z-index: 20; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     background-color: #6D0A1E; /* Black*/
@@ -410,7 +405,7 @@ h1, h2 , .banner-text-overlay {
 
 .banner-parallax { 
     /* The image used */
-    background-image: url("img/school.png");
+    background-image: url("../img/school.png");
 
     /* Set a specific height */
     height: 826px; 
@@ -418,7 +413,7 @@ h1, h2 , .banner-text-overlay {
 
 .quick-about-parallax { 
     /* The (darkened) image used */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(img/pencil.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/pencil.jpg);
 
     /* Set a specific height */
     height: 300px; 

@@ -1,16 +1,16 @@
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
 function openNav() {
-    var width = 350;
-    document.getElementById("sidenav").style.width = width + "px";
-    document.getElementById("grid-content").style.marginLeft = width + "px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    var width = 325;
+    $("#sidenav").css("width", width + "px");
+    $("#grid-content").css("margin-left", width + "px");
+    $("body").css("background-color", "rgba(0,0,0,0.4)");
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
 function closeNav() {
-    document.getElementById("sidenav").style.width = "0";
-    document.getElementById("grid-content").style.marginLeft = "0";
-    document.body.style.backgroundColor = "white";
+    $("#sidenav").css("width", 0);
+    $("#grid-content").css("margin-left", 0);
+    $("body").css("background-color", "white");
 }
 
 /* Move the viewer back to the page top */
@@ -57,22 +57,25 @@ $(document).ready(function() {
 
 
     $(".news-item").ready(function() {
-        // Colours each news item box 
-        var newsItems = $('.news-item');
         var availableColors = ['#FFE1E0', '#E7FBEA', '#E7E7FF', '#FFE5FF', '#FFFFE7'];
-        for(var i = 0; i < newsItems.length; i++) {
-            var randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
-            newsItems[i].style.backgroundColor = randomColor;
-            newsItems[i].style.boxShadow = "2px 2px";
-            availableColors.splice(availableColors.indexOf(randomColor),1);
-        }
+        $('.news-item').each(function () {
+            $(this).css("box-shadow", "2px 2px");
+            if($(this).parent().attr("id") == "quick-news-container") {
+                var randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
+                $(this).css("background-color", randomColor);
+                availableColors.splice(availableColors.indexOf(randomColor),1);
+            }
+            else {
+                $(this).css("background-color", "white");
+            }
+        });
     });
+
+    
 
 
     $(".accordion").ready(function(){
         var acc = $(".accordion");
-        
-
         for (var i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
                 this.classList.toggle("active");

@@ -16,16 +16,33 @@
    
   <xsl:import href="utils.xsl"/>
 
-  <xsl:variable name="news-file" select="concat($data-dir,'/news.xml')"/>  
+  <xsl:variable name="info-file" select="concat($data-dir,'/school_info.xml')"/>  
+  <xsl:variable name="info-doc" select="document($info-file)"/>
+  <xsl:variable name="info" select="$info-doc/SCHOOL_INFO"/>
+
+  <xsl:variable name="news-file" select="concat($data-dir,'/school_news.xml')"/>  
   <xsl:variable name="news-doc" select="document($news-file)"/>
-  <xsl:variable name="news-items" select="$news-doc/MAIN/NEWS/NEWS-ITEM"/>
-  <xsl:variable name="quick-news-items-allowed" select="$news-doc/MAIN/NEWS/@quick-news-items"/>
+  <xsl:variable name="news-items" select="$news-doc/SCHOOL_NEWS/NEWS/NEWS-ITEM"/>
+  <xsl:variable name="quick-news-items-allowed" select="$news-doc/SCHOOL_NEWS/NEWS/@quick-news-items"/>
 
-  <xsl:variable name="history-file" select="concat($data-dir,'/history.xml')"/>  
+  <xsl:variable name="history-file" select="concat($data-dir,'/school_history.xml')"/>  
   <xsl:variable name="history-doc" select="document($history-file)"/>
-  <xsl:variable name="history" select="$history-doc/HISTORY"/>
+  <xsl:variable name="history" select="$history-doc/SCHOOL_HISTORY"/>
+  
+  <xsl:variable name="policies-file" select="concat($data-dir,'/school_policies.xml')"/>  
+  <xsl:variable name="policies-doc" select="document($policies-file)"/>
+  <xsl:variable name="policies" select="$policies-doc/SCHOOL_POLICIES"/>
 
-  <xsl:variable name="schoolprop" select="MAIN/PROPERTIES/SCHOOL"/>
+  <xsl:variable name="calendar-file" select="concat($data-dir,'/school_calendar.xml')"/>  
+  <xsl:variable name="calendar-doc" select="document($calendar-file)"/>
+  <xsl:variable name="calendar" select="$calendar-doc/SCHOOL_CALENDARS"/>
+
+  <xsl:variable name="members-file" select="concat($data-dir,'/school_members.xml')"/>  
+  <xsl:variable name="members-doc" select="document($members-file)"/>
+  <xsl:variable name="members" select="$members-doc/SCHOOL_MEMBERS"/>
+
+  <xsl:variable name="properties" select="MAIN/PROPERTIES"/>
+  <xsl:variable name="schoolprop" select="$info/SCHOOL"/>
   <xsl:variable name="school-name" select="$schoolprop/@name"/>
   <xsl:variable name="school-add1" select="$schoolprop/@address1"/>
 
@@ -38,8 +55,22 @@
   	<xsl:call-template name="create-calendar-page"/>
   </xsl:template>
 
-  	<xsl:template name="create-index-page">
-  		<html>
+  <xsl:template name="html-header">
+      <head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <meta author="Greg Byrne - https://www.linkedin.com/in/greg-byrne-a4877340/"/>
+        <title><xsl:value-of select="$school-name"/> - <xsl:value-of select="$school-add1"/></title>
+      <link type="text/css" rel="stylesheet" href="css/ns.css"/>
+      <link href='https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded' rel='stylesheet' type='text/css'/>
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+      <script src="js/ns.js"></script>
+    </head>
+  </xsl:template>
+
+  <xsl:template name="create-index-page">
+  	<html>
 			<xsl:call-template name="html-header"/>
 	  		<body>
 				<xsl:call-template name="sidenav-bar"/>
@@ -129,7 +160,7 @@
   												</tr>
   											</thead>
   											<tbody>
-  												<xsl:for-each select="$schoolprop/STAFF/MEMBER">
+  												<xsl:for-each select="$members/STAFF/MEMBER">
   													<tr>
   														<td><xsl:value-of select="@name"/></td>
 	  													<td>	
@@ -158,7 +189,7 @@
   												</tr>
   											</thead>
   											<tbody>
-  												<xsl:for-each select="$schoolprop/BOM/MEMBER">
+  												<xsl:for-each select="$members/BOM/MEMBER">
   													<tr>
   														<td><xsl:value-of select="@name"/></td>
 	  													<td>	
@@ -194,7 +225,7 @@
   							<div class="content-container">
   								<div class="content-item" id="policies">
   									<h1>Policies</h1>
-  									<xsl:for-each select="$schoolprop/POLICIES/POLICY">
+  									<xsl:for-each select="$policies/POLICY">
   										<xsl:variable name="policy-file-name" select="@name"/>
   										<xsl:variable name="policy-file" select="@relativeFileLocation"/>
   										<button class="accordion"><xsl:value-of select="@name"/></button>
@@ -240,7 +271,7 @@
   									<h1><xsl:text>Calendar </xsl:text><xsl:value-of select="$schoolprop/CALENDAR/@years"/></h1>
   									<table class="custom-table" id="staff-member-table">
   										<tbody>
-  											<xsl:for-each select="$schoolprop/CALENDAR/CALENDARITEM">
+  											<xsl:for-each select="$calendar/CALENDAR/CALENDARITEM">
   												<tr>
   													<td><xsl:value-of select="@event"/></td>
 	  												<td>
@@ -260,20 +291,6 @@
   				</body>
   			</html>
   		</redirect:write>
-  	</xsl:template>
-
- 	<xsl:template name="html-header">
-  		<head>
-			<meta charset="UTF-8"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1"/>
-			<meta author="Greg Byrne - https://www.linkedin.com/in/greg-byrne-a4877340/"/>
-		    <title><xsl:value-of select="$school-name"/> - <xsl:value-of select="$school-add1"/></title>
-			<link type="text/css" rel="stylesheet" href="ns.css"/>
-			<link href='https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded' rel='stylesheet' type='text/css'/>
-			<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
-			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-			<script src="ns.js"></script>
-		</head>
   	</xsl:template>
 
   	<xsl:template name="sidenav-bar">
@@ -371,7 +388,7 @@
   	<xsl:template name="facebook-feed">
   		<div id="fb" class="grid-item-padding">
 			<div id="fb-container">
-				<xsl:variable name="facebook-feed-link" select="PROPERTIES/FACEBOOK/@feedLink"/>
+				<xsl:variable name="facebook-feed-link" select="$properties/FACEBOOK/@feedLink"/>
 				<iframe id="fb-feed" src="{$facebook-feed-link}" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"/>
 			</div>
 		</div>
@@ -385,21 +402,21 @@
 			<div id="contact-container">
 				<div id="contact-phone" class="contact-item">
 					<img src="icons/phone-24.ico" alt="Phone" class="contact-item-icon"/>
-					<xsl:variable name="school-contact-num" select="PROPERTIES/SCHOOL/@contactNumber"/>
+					<xsl:variable name="school-contact-num" select="$schoolprop/@contactNumber"/>
 					<a href="tel:{$school-contact-num}"><xsl:value-of select="$school-contact-num"/></a>
 				</div>
 				<div id="contact-email" class="contact-item">
 					<img src="icons/email-24.ico" alt="Email" class="contact-item-icon"/>
-					<xsl:variable name="school-contact-email" select="PROPERTIES/SCHOOL/@contactEmail"/>
+					<xsl:variable name="school-contact-email" select="$schoolprop/@contactEmail"/>
 					<a href="mailto:{$school-contact-email}"><xsl:value-of select="$school-contact-email"/></a>
 				</div>
 				<div id="contact-facebook" class="contact-item">
 					<img src="icons/facebook-24.ico" alt="Facebook" class="contact-item-icon"/>
-					<xsl:variable name="fb-link" select="PROPERTIES/FACEBOOK/@link"/>
+					<xsl:variable name="fb-link" select="$properties/FACEBOOK/@link"/>
       				<a href="{$fb-link}"><xsl:value-of select="$school-name"/></a>
 				</div>
 			</div>
-      		<xsl:variable name="google-map-link" select="PROPERTIES/GOOGLE/@mapLink"/>
+      		<xsl:variable name="google-map-link" select="$properties/GOOGLE/@mapLink"/>
       		<iframe id="gmap" src="{$google-map-link}" frameborder="0" allowfullscreen=""/>
       	</div>
   	</xsl:template>
@@ -420,7 +437,7 @@
   	<xsl:template name="footer">
   		<div id="footer" class="grid-item-padding">
 			<div id="footer-text">
-				Copyright © <xsl:value-of select="PROPERTIES/COPYRIGHT/@years"/>. <xsl:value-of select="$school-name"/>, <xsl:value-of select="$school-add1"/>. All Rights Reversed.
+				Copyright © <xsl:value-of select="$properties/COPYRIGHT/@years"/>. <xsl:value-of select="$school-name"/>, <xsl:value-of select="$school-add1"/>. All Rights Reversed.
 			</div>
 			<button id="footer-button" onclick="topFunction()">Back to Top</button>
 		</div>
