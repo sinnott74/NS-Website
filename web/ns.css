@@ -132,11 +132,11 @@ h1, h2 , .banner-text-overlay {
     font-size: 80%;
 }
 
-.news-item-date, .news-item-title, .contact-item, #footer-text, #footer-button, #navigation-text, .bubble-title, #more-news-redirect-button, #sidenav a, .members thead, .accordion {
+.news-item-date, .news-item-title, .contact-item, #footer-text, #footer-button, #navigation-text, .bubble-title, #more-news-redirect-button, #sidenav a, .custom-table thead, .accordion {
     font-family: 'Lucida Grande', sans-serif;
 }
 
-.news-item-text-content, .members tbody, p, .panel {
+.news-item-text-content, .custom-table tbody, p, .panel {
     padding-top: 3px;
     font-family: 'Roboto', sans-serif;
 }
@@ -248,28 +248,28 @@ h1, h2 , .banner-text-overlay {
    margin-bottom: 30px;
 }
 
-.members-table-container {
+.custom-table-container {
     display: flex;
     justify-content: center;
 }
 
-.members {
+.custom-table {
     width: 75%;
     margin: 50px;
     border-collapse: collapse;
 }
 
-.members thead {
+.custom-table thead {
     border-bottom: 2px solid;
     font-weight: bold;
 }
 
-.members th, td {
+.custom-table th, td {
     border-bottom: 1px solid;
     padding: 20px;
 }
 
-.members tbody tr:hover {
+.custom-table tbody tr:hover {
     background-color: #FEF9CD;
 }
 

@@ -35,6 +35,7 @@
   	<xsl:call-template name="create-history-page"/>
   	<xsl:call-template name="create-staff-page"/>
   	<xsl:call-template name="create-policies-page"/>
+  	<xsl:call-template name="create-calendar-page"/>
   </xsl:template>
 
   	<xsl:template name="create-index-page">
@@ -119,8 +120,8 @@
   							<div class="content-container">
   								<div class="content-item" id="staff">
   									<h1>Staff</h1>
-  									<div class="members-table-container">
-  										<table class="members" id="staff-member-table">
+  									<div class="custom-table-container">
+  										<table class="custom-table" id="staff-member-table">
 	  										<thead>
   												<tr>
   													<td>Staff Member</td>
@@ -148,8 +149,8 @@
   										</table>
   									</div>
   									<h1>Board of Management</h1>
-  									<div class="members-table-container">
-	  									<table class="members" id="bom-member-table">
+  									<div class="custom-table-container">
+	  									<table class="custom-table" id="bom-member-table">
   											<thead>
   												<tr>
   													<td>B.O.M. Member</td>
@@ -232,6 +233,42 @@
 									}
 									</script>
 	  							</div>
+  							</div>
+  						</div>
+  						<xsl:call-template name="footer"/>
+  					</div>
+  				</body>
+  			</html>
+  		</redirect:write>
+  	</xsl:template>
+
+  	<xsl:template name="create-calendar-page">
+  		<redirect:write file="{$web-dir}/calendar.html">
+  			<html>
+  				<xsl:call-template name="html-header"/>
+  				<body>
+	  				<xsl:call-template name="sidenav-bar"/>
+  					<div id="other-page-grid">
+  						<xsl:call-template name="navigation-bar"/>
+  						<div id="content">
+  							<div class="content-container">
+  								<div class="content-item" id="calendar">
+  									<h1><xsl:text>Calendar </xsl:text><xsl:value-of select="$schoolprop/CALENDAR/@years"/></h1>
+  									<table class="custom-table" id="staff-member-table">
+  										<tbody>
+  											<xsl:for-each select="$schoolprop/CALENDAR/CALENDARITEM">
+  												<tr>
+  													<td><xsl:value-of select="@event"/></td>
+	  												<td>
+	  													<xsl:call-template name="replace-newline-with-pagebreak">
+															<xsl:with-param name="text" select="./text()"/>
+														</xsl:call-template>
+													</td>
+  												</tr>
+  											</xsl:for-each>
+  										</tbody>
+  									</table>
+  								</div>
   							</div>
   						</div>
   						<xsl:call-template name="footer"/>
