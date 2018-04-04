@@ -386,15 +386,15 @@ h1, h2 , .banner-text-overlay {
 }
 
 #bubble-student {
-    background: #CE0000;
+    background: #FF3333;
 }
 
 #bubble-teacher {
-    background: #00A000;
+    background: #33CC00;
 }
 
 #bubble-sna {
-    background: #1A00FF;
+    background: #0099FF;
 }
 
 .bubble-title {
