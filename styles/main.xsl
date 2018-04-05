@@ -60,7 +60,8 @@
       <meta charset="UTF-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <meta author="Greg Byrne - https://www.linkedin.com/in/greg-byrne-a4877340/"/>
-        <title><xsl:value-of select="$school-name"/> - <xsl:value-of select="$school-add1"/></title>
+      <title><xsl:value-of select="$school-name"/> - <xsl:value-of select="$school-add1"/></title>
+      <link rel="shortcut icon" type="image/png" href="icons/favicon.png"/>
       <link type="text/css" rel="stylesheet" href="css/ns.css"/>
       <link href='https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded' rel='stylesheet' type='text/css'/>
       <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
