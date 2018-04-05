@@ -56,6 +56,7 @@
   </xsl:template>
 
   <xsl:template name="html-header">
+      <xsl:comment>This page is generated from a build process</xsl:comment>
       <head>
       <meta charset="UTF-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
