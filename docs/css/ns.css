@@ -36,6 +36,11 @@
     width: -webkit-fill-available;
 }
 
+html, body {
+    margin:0;
+    padding:0;
+}
+
 h1, h2 , .banner-text-overlay {
     font-family: 'Stint Ultra Expanded', cursive;
 }
