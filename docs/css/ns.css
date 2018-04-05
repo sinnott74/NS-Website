@@ -102,33 +102,29 @@ h1, h2 , .banner-text-overlay {
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid;
-    font-size: 100%;
     background-color: white;
 
-}
-
-.news-item:hover {
-    font-size: 200%;
 }
 
 .news-item-title {
     font-weight: bold;
     font-variant: small-caps;
+    font-size: 25px;
 }
 
 .news-item-date {
     font-weight: lighter;
     font-style: italic;
-    font-size: 80%;
 }
 
-.news-item-date, .news-item-title, .contact-item, #footer-text, #footer-button, #navigation-text, .bubble-title, #more-news-redirect-button, #sidenav a, .custom-table thead, .accordion {
+.news-item-title, .contact-item, #footer-text, #footer-button, #navigation-text, .bubble-title, #more-news-redirect-button, #sidenav a, .custom-table thead, .accordion {
     font-family: 'Lucida Grande', sans-serif;
 }
 
-.news-item-text-content, .custom-table tbody, p, .panel {
+.news-item-date, .news-item-text-content, .custom-table tbody, p, .panel {
     padding-top: 3px;
     font-family: 'Roboto', sans-serif;
+    font-size: 20px;
 }
 
 #more-news-redirect-button {
@@ -334,9 +330,20 @@ h1, h2 , .banner-text-overlay {
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
+@media screen and (max-width: 420px) {
     .sidenav {padding-top: 30px;}
     .sidenav a {font-size: 25px;}
+    .index-grid {grid-template-areas:    
+                            "navigation"
+                            "banner"
+                            "quick-about"
+                            "quick-news"
+                            "fb"
+                            "contact"
+                            "staff"
+                            "policies"
+                            "history"
+                            "footer";}
 }
 /******* The side navigation menu *******/
 
