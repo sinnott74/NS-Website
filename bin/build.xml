@@ -6,8 +6,8 @@
     value="${basedir}"
   />
   <property
-    name="dir.web"
-    value="${dir.home}/web"
+    name="dir.doc"
+    value="${dir.home}/doc"
   />
   <property
     name="dir.data"
@@ -23,7 +23,7 @@
   />
   <property
     name="file.html.index"
-    value="${dir.web}/index.html"
+    value="${dir.doc}/index.html"
   />
   <property
     name="file.xsl.main"
@@ -43,7 +43,7 @@
         name="data-dir"
       />
       <param
-        expression="${dir.web}" 
+        expression="${dir.doc}" 
         name="web-dir"
       />
     </xslt>
