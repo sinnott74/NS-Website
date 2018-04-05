@@ -7,7 +7,7 @@
   />
   <property
     name="dir.doc"
-    value="${dir.home}/doc"
+    value="${dir.home}/docs"
   />
   <property
     name="dir.data"
