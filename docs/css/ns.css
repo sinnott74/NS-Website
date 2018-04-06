@@ -288,16 +288,30 @@ h1, h2 , .banner-text-overlay {
 
 /******* The side navigation menu *******/
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 20; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #6D0A1E; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 100px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+   height: 100%;
+   position: fixed;
+   z-index: 20;
+   top: 0;
+   left: 0;
+   background-color: #6D0A1E;
+   overflow-x: hidden;
+   padding-top: 100px;
+   transition: 0.5s;
+   transform: translate3d(-100%,0,0);
+}
+
+.scrim {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   transition: opacity 0.5s;
+   opacity: 0;
+   pointer-events: none;
+   background: #404040;
+   will-change: opacity;
+   z-index: 11;
 }
 
 /* The navigation menu links */

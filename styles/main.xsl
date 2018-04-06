@@ -296,6 +296,8 @@
   	</xsl:template>
 
   	<xsl:template name="sidenav-bar">
+      <!-- Scrim div used to allow click anywhere close -->
+      <div class="scrim" onclick="closeNav()" style="opacity: 0; pointer-events: none;"></div>
   		<div id="sidenav" class="sidenav" onclick="closeNav()">
 			<a href="index.html">Home</a>
 			<a href="news.html">News</a>

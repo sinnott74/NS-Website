@@ -1,16 +1,16 @@
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
 function openNav() {
-    var width = 325;
-    $("#sidenav").css("width", width + "px");
-    $("#grid-content").css("margin-left", width + "px");
-    $("body").css("background-color", "rgba(0,0,0,0.4)");
+   $(".sidenav").css("transform", "translate3d(0,0,0)");
+   $(".scrim").css("opacity", "0.75");
+   $(".scrim").css("pointer-events", "auto");
+   $(".scrim").css("visibility", "visible");
+   $("body").css("background-color", "rgba(0,0,0,0.4)");
 }
 
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
 function closeNav() {
-    $("#sidenav").css("width", 0);
-    $("#grid-content").css("margin-left", 0);
-    $("body").css("background-color", "white");
+   $(".sidenav").css("transform", "translate3d(-100%,0,0)");
+   $(".scrim").css("opacity", "0");
+   $(".scrim").css("visibility", "hidden");
+   $("body").css("background-color", "white");
 }
 
 /* Move the viewer back to the page top */
