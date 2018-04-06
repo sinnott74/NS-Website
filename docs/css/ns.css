@@ -186,6 +186,7 @@ h1, h2 , .banner-text-overlay {
 
 .contact-item:hover {
       transform: scale(2);
+      transition: transform 200ms;
 }
 
 .contact-item-icon {
