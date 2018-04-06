@@ -81,8 +81,8 @@ h1, h2 , .banner-text-overlay {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
 #quick-news {
@@ -93,19 +93,16 @@ h1, h2 , .banner-text-overlay {
 }
 
 #quick-news-title {
-    margin-left: 15px;
+    margin-left: 2vh;
 }
 
 #quick-news-container {
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 30px;
+    margin: 0 5vh 5vh 5vh;
 }
 
 .news-item {
-    margin: 5px;
-    margin-bottom: 10px;
-    padding: 10px;
+    padding: 2vh;
+    margin-bottom: 2vh;
     border: 1px solid;
     background-color: white;
 
@@ -122,23 +119,29 @@ h1, h2 , .banner-text-overlay {
     font-style: italic;
 }
 
+.news-item-text-content {
+    padding: 2vh 0 2vh 0;
+
+}
+
 .news-item-title, .contact-item, #footer-text, #footer-button, #navigation-text, .bubble-title, #more-news-redirect-button, #sidenav a, .custom-table thead, .accordion {
     font-family: 'Lucida Grande', sans-serif;
 }
 
 .news-item-date, .news-item-text-content, .custom-table tbody, p, .panel {
-    padding-top: 3px;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
 }
 
 #more-news-redirect-button {
-    padding: 5px;
+    padding: 2vh;
     font-size: 15px;
 }
 
 #fb {
     grid-area: fb;
+    margin: 0 2vh 0 2vh;
+
 }
 
 #fb-container {
@@ -162,11 +165,11 @@ h1, h2 , .banner-text-overlay {
     grid-area: contact;
     background-color: #E4E1E0;
     border-top: 10px solid;
-    margin-top: 20px;
+    margin-top: 5vh;
 }
 
 #contact-title {
-    margin-left: 15px;
+    margin-left: 2vh;
 }
 
 #contact-container {
@@ -177,9 +180,7 @@ h1, h2 , .banner-text-overlay {
 }
 
 .contact-item {
-    padding: 5px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 1vh 1vh 1vh 1vh;
     font-size: 24px;
 
 }
@@ -195,17 +196,16 @@ h1, h2 , .banner-text-overlay {
 }
 
 #gmap {
-    margin: 15px;
+    margin: 3vh;
     width: -webkit-fill-available;
-    height: 375px;
+    height: 70vh;
 }
 
 #footer {
     grid-area: footer;
     overflow: hidden;
     background-color: #6D0A1E;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 1vh 0 1vh 0;
 }
 
 #footer-text {
@@ -218,8 +218,9 @@ h1, h2 , .banner-text-overlay {
     float: right;
     color: white;
     background-color: black;
-    padding: 10px;
-    margin-right: 5px;
+    padding: 1vh;
+    margin-right: 2vh;
+    font-size: 25px;
 }
 
 #content {
@@ -269,12 +270,12 @@ h1, h2 , .banner-text-overlay {
 #navigation-text {
     color: white;
     float: right;
-    margin-right: 30px;
-    padding-top: 10px;
+    margin-right: 2vh;
+    padding-top: 2vh;
 }
 
 #sidenav-toggle {
-    margin-left: 10px;
+    margin-left: 2vh;
     float: left;
 }
 
@@ -317,7 +318,7 @@ h1, h2 , .banner-text-overlay {
 
 /* The navigation menu links */
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 2vh 8vh 2vh 8vh;
     text-decoration: none;
     font-size: 45px;
     color: #D1D3D3;
@@ -350,8 +351,8 @@ h1, h2 , .banner-text-overlay {
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-width: 420px) {
-    .sidenav {padding-top: 30px;}
+@media screen and (max-width: 500px) {
+    .sidenav {padding-top: 5vh;}
     .sidenav a {font-size: 25px;}
     .index-grid {grid-template-areas:    
                             "navigation"
@@ -364,14 +365,18 @@ h1, h2 , .banner-text-overlay {
                             "policies"
                             "history"
                             "footer";}
+    #fb { margin: 5vh 0 5vh 0;}
+    #gmap {margin:0; height: 60vh;}
+    #contact {margin-top: 2vh;}
+    #footer {display:flex; flex-direction:row;}
 }
+
 /******* The side navigation menu *******/
 
 
 /**** Bubble Counters ****/
 
 .bubble-container {
-    margin: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -381,6 +386,7 @@ h1, h2 , .banner-text-overlay {
     display: flex;
     flex-direction: column;
     align-items: center;  
+    justify-content: center;
 }
 
 .single-bubble-container:hover {
@@ -389,18 +395,15 @@ h1, h2 , .banner-text-overlay {
 }
 
 .bubble {
-  display: flex;
-  justify-content: center;
-  width: 100px;
-  height: 100px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-  float:left;
-  margin-left: 20px;
-  margin-right: 20px;
-  border: 1px solid;
-  box-shadow: 1px 1px;
+    display: flex;
+    justify-content: center;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 10vh;
+    float:left;
+    margin: 0 2vh 0 2vh;
+    border: 1px solid;
+    box-shadow: 1px 1px;
 }
 
 #bubble-student {
@@ -429,9 +432,7 @@ h1, h2 , .banner-text-overlay {
 .banner-parallax { 
     /* The image used */
     background-image: url("../img/school.png");
-
-    /* Set a specific height */
-    height: 826px; 
+    height: 100vh;
 }
 
 .quick-about-parallax { 
