@@ -1,7 +1,14 @@
 @media screen and (max-width: 450px) {
-    .sidenav {padding-top: 5vh;}
-    .sidenav a {font-size: 25px;}
-    .index-grid {grid-template-areas:    
+    .sidenav {
+        padding-top: 5vh;
+    }
+    
+    .sidenav a {
+        font-size: 25px;
+    }
+    
+    .index-grid {
+        grid-template-areas:    
                             "navigation"
                             "banner"
                             "quick-about"
@@ -11,13 +18,51 @@
                             "staff"
                             "policies"
                             "history"
-                            "footer";}
-    #fb { margin: 5vh 0 5vh 0;}
-    #gmap {margin:0; height: 60vh;}
-    #contact {margin-top: 2vh;}
-    #footer {display:flex; flex-direction:row;}
-    .content-item{margin: 2vh 2vh;}
-    #staff-title {margin: 3vh 0 3vh 0;}
-    #bom-title{margin: 10vh 0 3vh 0;}
-    #calendar-table{margin: 0;}
+                            "footer";
+    }
+    
+    #fb {
+        margin: 5vh 0 5vh 0;
+    }
+    
+    #gmap {
+        margin: 0; 
+        height: 60vh;
+    }
+    
+    #contact {
+        margin-top: 2vh;
+    }
+
+    #contact-container {
+        align-items: unset;
+    }
+
+    .contact-item {
+        padding: 2vh 10vh 2vh 10vh;
+    }
+    
+    .content-item {
+        margin: 2vh 2vh;
+    }
+    
+    #staff-title {
+        margin: 3vh 0 3vh 0;
+    }
+    
+    #bom-title {
+        margin: 10vh 0 3vh 0;
+    }
+    
+    #calendar-table {
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
 }

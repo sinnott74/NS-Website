@@ -102,7 +102,7 @@
   						<div id="content">
   							<div class="content-container">
   								<div class="content-item" id="history">
-  									<h1 id="history-title">History</h1>
+  									<h2 id="history-title">History</h2>
   									<p>
   										<xsl:call-template name="replace-newline-with-pagebreak">
 											<xsl:with-param name="text" select="$history"/>
@@ -129,7 +129,7 @@
   						<div id="content">
   							<div class="content-container">
   								<div class="content-item" id="news">
-  									<h1 id="news-title">News</h1>
+  									<h2 id="news-title">News</h2>
   									<div id="news-container">
   										<xsl:call-template name="news-items"/>
   									</div>
@@ -154,7 +154,7 @@
   						<div id="content">
   							<div class="content-container">
   								<div class="content-item" id="staff">
-  									<h1 id="staff-title">Staff</h1>
+  									<h2 id="staff-title">Staff</h2>
   									<div class="custom-table-container">
   										<table class="custom-table" id="staff-member-table">
 	  										<thead>
@@ -183,7 +183,7 @@
   											</tbody>
   										</table>
   									</div>
-  									<h1 id="bom-title">Board of Management</h1>
+  									<h2 id="bom-title">Board of Management</h2>
   									<div class="custom-table-container">
 	  									<table class="custom-table" id="bom-member-table">
   											<thead>
@@ -228,7 +228,7 @@
   						<div id="content">
   							<div class="content-container">
   								<div class="content-item" id="policies">
-  									<h1 id="policies-title">Policies</h1>
+  									<h2 id="policies-title">Policies</h2>
   									<xsl:for-each select="$policies/POLICY">
   										<xsl:variable name="policy-file-name" select="@name"/>
   										<xsl:variable name="policy-file" select="@relativeFileLocation"/>
@@ -272,7 +272,7 @@
   						<div id="content">
   							<div class="content-container">
   								<div class="content-item" id="calendar">
-  									<h1 id="calendar-title"><xsl:text>Calendar </xsl:text><xsl:value-of select="$schoolprop/CALENDAR/@years"/></h1>
+  									<h2 id="calendar-title"><xsl:text>Calendar </xsl:text><xsl:value-of select="$schoolprop/CALENDAR/@years"/></h2>
   									<table class="custom-table" id="calendar-table">
   										<tbody>
   											<xsl:for-each select="$calendar/CALENDAR/CALENDARITEM">
