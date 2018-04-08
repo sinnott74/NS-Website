@@ -1,0 +1,23 @@
+@media screen and (max-width: 450px) {
+    .sidenav {padding-top: 5vh;}
+    .sidenav a {font-size: 25px;}
+    .index-grid {grid-template-areas:    
+                            "navigation"
+                            "banner"
+                            "quick-about"
+                            "quick-news"
+                            "fb"
+                            "contact"
+                            "staff"
+                            "policies"
+                            "history"
+                            "footer";}
+    #fb { margin: 5vh 0 5vh 0;}
+    #gmap {margin:0; height: 60vh;}
+    #contact {margin-top: 2vh;}
+    #footer {display:flex; flex-direction:row;}
+    .content-item{margin: 2vh 2vh;}
+    #staff-title {margin: 3vh 0 3vh 0;}
+    #bom-title{margin: 10vh 0 3vh 0;}
+    #calendar-table{margin: 0;}
+}

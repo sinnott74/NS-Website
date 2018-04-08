@@ -19,8 +19,6 @@
     grid-template-areas:    "navigation"
                             "content"
                             "footer";
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
 }
 
 #banner {
@@ -225,20 +223,11 @@ h1, h2 , .banner-text-overlay {
 
 #content {
     grid-area: content;
-}
-
-.content-container {
     background-color: #E4E1E0;
-    border-top: 10px solid;
-    border-bottom: 10px solid;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 .content-item {
-   margin: 100px;
-   margin-top: 30px;
-   margin-bottom: 30px;
+    margin: 5vh;
 }
 
 .custom-table-container {
@@ -247,8 +236,6 @@ h1, h2 , .banner-text-overlay {
 }
 
 .custom-table {
-    width: 75%;
-    margin: 50px;
     border-collapse: collapse;
 }
 
@@ -350,26 +337,25 @@ h1, h2 , .banner-text-overlay {
     padding: 20px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-width: 500px) {
-    .sidenav {padding-top: 5vh;}
-    .sidenav a {font-size: 25px;}
-    .index-grid {grid-template-areas:    
-                            "navigation"
-                            "banner"
-                            "quick-about"
-                            "quick-news"
-                            "fb"
-                            "contact"
-                            "staff"
-                            "policies"
-                            "history"
-                            "footer";}
-    #fb { margin: 5vh 0 5vh 0;}
-    #gmap {margin:0; height: 60vh;}
-    #contact {margin-top: 2vh;}
-    #footer {display:flex; flex-direction:row;}
+#staff-title {
+        margin: 0 0 0 5vh;
 }
+
+#bom-title {
+        margin: 10vh 0 0 5vh;
+}
+
+#calendar {
+    display: flex;
+    flex-direction: column;
+}
+
+#calendar-table {
+    margin: 0 10vh 0 10vh;
+}
+
+
+
 
 /******* The side navigation menu *******/
 
@@ -498,6 +484,8 @@ h1, h2 , .banner-text-overlay {
 .active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
+
+
 
 </style>
 

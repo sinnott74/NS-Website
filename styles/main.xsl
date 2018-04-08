@@ -63,9 +63,11 @@
       <meta author="Greg Byrne - https://www.linkedin.com/in/greg-byrne-a4877340/"/>
       <title><xsl:value-of select="$school-name"/> - <xsl:value-of select="$school-add1"/></title>
       <link rel="shortcut icon" type="image/png" href="icons/favicon.png"/>
-      <link type="text/css" rel="stylesheet" href="css/ns.css"/>
-      <link href='https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded' rel='stylesheet' type='text/css'/>
-      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
+      
+      <link href="css/ns.css" rel="stylesheet" type="text/css" />
+      <link href="css/ns-mobile.css"  rel="stylesheet" type="text/css"/>
+      <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded" rel="stylesheet" type="text/css"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"/>
       <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
       <script src="js/ns.js"></script>
     </head>
@@ -95,12 +97,12 @@
   				<xsl:call-template name="html-header"/>
   				<body>
 	  				<xsl:call-template name="sidenav-bar"/>
-  					<div id="other-page-grid">
+  					<div class="other-page-grid">
   						<xsl:call-template name="navigation-bar"/>
   						<div id="content">
   							<div class="content-container">
   								<div class="content-item" id="history">
-  									<h1>History</h1>
+  									<h1 id="history-title">History</h1>
   									<p>
   										<xsl:call-template name="replace-newline-with-pagebreak">
 											<xsl:with-param name="text" select="$history"/>
@@ -122,12 +124,12 @@
   				<xsl:call-template name="html-header"/>
   				<body>
 	  				<xsl:call-template name="sidenav-bar"/>
-  					<div id="other-page-grid">
+  					<div class="other-page-grid">
   						<xsl:call-template name="navigation-bar"/>
   						<div id="content">
   							<div class="content-container">
   								<div class="content-item" id="news">
-  									<h1>News</h1>
+  									<h1 id="news-title">News</h1>
   									<div id="news-container">
   										<xsl:call-template name="news-items"/>
   									</div>
@@ -147,12 +149,12 @@
   				<xsl:call-template name="html-header"/>
   				<body>
 	  				<xsl:call-template name="sidenav-bar"/>
-  					<div id="other-page-grid">
+  					<div class="other-page-grid">
   						<xsl:call-template name="navigation-bar"/>
   						<div id="content">
   							<div class="content-container">
   								<div class="content-item" id="staff">
-  									<h1>Staff</h1>
+  									<h1 id="staff-title">Staff</h1>
   									<div class="custom-table-container">
   										<table class="custom-table" id="staff-member-table">
 	  										<thead>
@@ -181,7 +183,7 @@
   											</tbody>
   										</table>
   									</div>
-  									<h1>Board of Management</h1>
+  									<h1 id="bom-title">Board of Management</h1>
   									<div class="custom-table-container">
 	  									<table class="custom-table" id="bom-member-table">
   											<thead>
@@ -221,12 +223,12 @@
   				<xsl:call-template name="html-header"/>
   				<body>
 	  				<xsl:call-template name="sidenav-bar"/>
-  					<div id="other-page-grid">
+  					<div class="other-page-grid">
   						<xsl:call-template name="navigation-bar"/>
   						<div id="content">
   							<div class="content-container">
   								<div class="content-item" id="policies">
-  									<h1>Policies</h1>
+  									<h1 id="policies-title">Policies</h1>
   									<xsl:for-each select="$policies/POLICY">
   										<xsl:variable name="policy-file-name" select="@name"/>
   										<xsl:variable name="policy-file" select="@relativeFileLocation"/>
@@ -265,13 +267,13 @@
   				<xsl:call-template name="html-header"/>
   				<body>
 	  				<xsl:call-template name="sidenav-bar"/>
-  					<div id="other-page-grid">
+  					<div class="other-page-grid">
   						<xsl:call-template name="navigation-bar"/>
   						<div id="content">
   							<div class="content-container">
   								<div class="content-item" id="calendar">
-  									<h1><xsl:text>Calendar </xsl:text><xsl:value-of select="$schoolprop/CALENDAR/@years"/></h1>
-  									<table class="custom-table" id="staff-member-table">
+  									<h1 id="calendar-title"><xsl:text>Calendar </xsl:text><xsl:value-of select="$schoolprop/CALENDAR/@years"/></h1>
+  									<table class="custom-table" id="calendar-table">
   										<tbody>
   											<xsl:for-each select="$calendar/CALENDAR/CALENDARITEM">
   												<tr>
