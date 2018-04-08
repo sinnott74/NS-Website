@@ -18,21 +18,19 @@ function topFunction() {
     window.scroll({
         top: 0, 
         left: 0, 
-        behavior: 'smooth' 
+        behavior: "smooth" 
     }); 
 }
 
 
-$(document).ready(function() {
-
-   
+$(document).ready(function() {   
     $(".count").ready(function() {
-        $('.count').each(function () {
-            $(this).prop('Counter',0).animate({
+        $(".count").each(function () {
+            $(this).prop("Counter",0).animate({
                 Counter: $(this).text()
             }, {
                 duration: 6000,
-                easing: 'swing',
+                easing: "swing",
                 step: function (now) {
                     $(this).text(Math.ceil(now));
                 }
@@ -43,7 +41,8 @@ $(document).ready(function() {
     $("#banner").ready(function() {
         // Have the banner text fade on scroll
         $(window).scroll(function(){
-            $(".banner-text-overlay").css("opacity", 1 - $(window).scrollTop() / 550);
+            behavior: "smooth" 
+            $(".banner-text-overlay").css("opacity", 1 - $(window).scrollTop() / 350);
 
             var bannerTextOpacity = $(".banner-text-overlay").css("opacity");
             if(bannerTextOpacity > 0) {
@@ -60,8 +59,8 @@ $(document).ready(function() {
 
 
     $(".news-item").ready(function() {
-        var availableColors = ['#FFE1E0', '#E7FBEA', '#E7E7FF', '#FFE5FF', '#FFFFE7'];
-        $('.news-item').each(function () {
+        var availableColors = ["#FFE1E0", "#E7FBEA", "#E7E7FF", "#FFE5FF", "#FFFFE7"];
+        $(".news-item").each(function () {
             $(this).css("box-shadow", "2px 2px");
             if($(this).parent().attr("id") == "quick-news-container") {
                 var randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
@@ -73,8 +72,6 @@ $(document).ready(function() {
             }
         });
     });
-
-    
 
 
     $(".accordion").ready(function(){
