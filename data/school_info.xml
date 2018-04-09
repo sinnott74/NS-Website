@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SCHOOL_INFO>
 	<SCHOOL
-		name="National School"
-		address1="address1" 
-		address2="address2" 
-		address3="address3"
+		name="St. Brigid's National School"
+		address1="Cortown" 
+		address2="Kells" 
+		address3="Co. Meath"
 		contactNumber="04692xxxxx"
 		contactEmail="school@school.ie"
 		pupilCount="115"

@@ -51,6 +51,10 @@ h2 {
     font-size: 6vh;
 }
 
+#calendar-table td {
+    text-align: center;
+}
+
 #parent-text-container {
     position:relative;
 }
