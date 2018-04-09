@@ -62,6 +62,10 @@
         margin: 0;
     }
 
+    .banner-parallax {
+        background-position: right;
+    }
+
     h1 {
         font-size: 2em;
     }
