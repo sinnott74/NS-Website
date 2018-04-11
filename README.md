@@ -11,7 +11,9 @@ After generating the HTML, they are source controlled and hosted using [Github P
 ### Technologies Used
 * HTML
 * CSS
-* Javascript (JQuery)
+   * Particularly [Grid](https://www.w3schools.com/css/css_grid.asp) and [Flexbox](https://www.w3schools.com/css/css3_flexbox.asp)
+* Javascript
+    * Particularly [JQuery](https://jquery.com/)
 * XSLT 1.0
 * XML
 * [Apache ANT](https://ant.apache.org/)
@@ -19,7 +21,7 @@ After generating the HTML, they are source controlled and hosted using [Github P
 
 ## Requirements
 1. Apache ANT (to generate the HTML from XSL transformation using the [XSLT task](https://ant.apache.org/manual/Tasks/style.html)).
-  * *Note*: Apache ANT comes bundled with Xalan required for XSL transformations.
+    * *Note*: Apache ANT comes bundled with Xalan required for XSL transformations.
 
 ## How to generate
 1. Run the `build.sh` file. This will call the build script that generates the HTML artefacts within the `../docs` folder.
