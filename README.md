@@ -15,6 +15,7 @@ After generating the HTML, they are source controlled and hosted using [Github P
 * XSLT 1.0
 * XML
 * [Apache ANT](https://ant.apache.org/)
+* Git for version control (obviously!)
 
 ## Requirements
 1. Apache ANT (to generate the HTML from XSL transformation using the [XSLT task](https://ant.apache.org/manual/Tasks/style.html)).
